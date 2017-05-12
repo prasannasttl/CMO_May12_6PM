@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CMO.CMOffice.Contact_CMO"
+             BackgroundColor="#f7f7f7"
+             xmlns:local = "clr-namespace:CMO;assembly=CMO"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+  
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="Requirefieldtextstyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Red" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="BackgroundColor" Value="Black" />
+      </Style>
+      <Style x:Key="SubTitleStyle" TargetType="Label">
+        
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="#f47421" />
+      </Style>
+      <Style x:Key="SimpleTextStyle" TargetType="Label">
+       
+        <Setter Property="TextColor" Value="Red" />
+      </Style>
+      <Style x:Key="SimpleTextStyle_Icon" TargetType="Label">
+       
+        <Setter Property="TextColor" Value="#484848" />
+      </Style>
+   
+      <Style x:Key="TextBoxAlertStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Red" />
+        <Setter Property="IsVisible" Value="false" />
+      </Style>
+    
+      
+        
+     <Style x:Key="buttonStyle" TargetType="Button">
+        <!--<Setter Property="WidthRequest" Value="100" />-->
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="BackgroundColor" Value="#f47421" />
+      </Style>
+      
+     <Style x:Key="EntryStyle" TargetType="Entry">
+        <Setter Property="TextColor" Value="#484848" />
+        <Setter Property="PlaceholderColor" Value="#484848" />
+        <Setter Property="Margin" Value="5,0,0,0" />
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="HeightRequest" Value="38" />
+        <Setter Property="Grid.Column" Value="2" />
+      </Style>
+     <Style x:Key="EntryImageStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="Margin" Value="5,0,0,0" />
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="Grid.Column" Value="0" />
+      </Style>
+     <Style x:Key="SeparatorVerticalLineStyle" TargetType="Grid">
+        <Setter Property="WidthRequest" Value="1" />
+        <Setter Property="BackgroundColor" Value="#DCDCDC" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="Grid.Column" Value="1" />
+     </Style>
+     <Style x:Key="FrameEntryStyle" TargetType="Frame">
+        <Setter Property="OutlineColor" Value="#DCDCDC" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="HasShadow" Value="false" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="Padding" Value="1" />
+        <Setter Property="BackgroundColor" Value="#DCDCDC" />
+      </Style>
+    
+
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Content>
+    <ScrollView Orientation="Vertical" HorizontalOptions="Fill"   VerticalOptions="FillAndExpand">
+      <Grid BackgroundColor="White" HorizontalOptions="Fill"   VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" Source="contact"  Aspect="Fill"/>
+        <StackLayout Grid.Row="1" Padding="15">
+            <Frame Style="{StaticResource FrameEntryStyle}" Padding="1">
+              <Frame.Content>
+                <Grid BackgroundColor="White">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+                  <Image   Source="icon_name.png"   Style="{StaticResource EntryImageStyle}" />
+                  <Grid   Style="{StaticResource SeparatorVerticalLineStyle}"/>
+                  <Entry  Placeholder="{x:Static local:AppResources.LContactName}"
+                          x:Name="txtName"   ClassId="50" 
+                          Style="{StaticResource EntryStyle}"/>
+                </Grid>
+              </Frame.Content>
+            </Frame>
+
+            <Frame Style="{StaticResource FrameEntryStyle}" Padding="1">
+               <Frame.Content>
+                <Grid BackgroundColor="White">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+                  <Image  Source="icon_email.png"  Style="{StaticResource EntryImageStyle}"/>
+                    <Grid   Style="{StaticResource SeparatorVerticalLineStyle}"/>
+                    <Entry Placeholder="{x:Static local:AppResources.LContactEmail}"
+                           x:Name="txtEmail"  ClassId="50"  Keyboard="Email"
+                           Style="{StaticResource EntryStyle}"/>
+                </Grid>
+              </Frame.Content>
+            </Frame>
+
+            <Frame Style="{StaticResource FrameEntryStyle}" Padding="1">
+              <Frame.Content>
+                <Grid BackgroundColor="White">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+                  <Image  Source="icon_mobno.png"  Style="{StaticResource EntryImageStyle}"/>
+                  <Grid   Style="{StaticResource SeparatorVerticalLineStyle}"/>          
+                  <Entry   Placeholder="{x:Static local:AppResources.LContactMobileNumber}"
+                           x:Name="txtMobile" Keyboard="Telephone" ClassId="15" 
+                           Style="{StaticResource EntryStyle}"/>
+                </Grid>
+              </Frame.Content>
+            </Frame>
+
+            <Frame Style="{StaticResource FrameEntryStyle}" Padding="1">
+              <Frame.Content>
+                <Grid BackgroundColor="White">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+                  <Image  Source="icon_subject.png"  Style="{StaticResource EntryImageStyle}"/>   
+                 <Grid Style="{StaticResource SeparatorVerticalLineStyle}"/>    
+                    <Entry Placeholder="{x:Static local:AppResources.LSubject}"
+                           x:Name="txtSubject"   ClassId="100"
+                           Style="{StaticResource EntryStyle}" />
+                </Grid>
+              </Frame.Content>
+            </Frame>
+
+            <Frame Style="{StaticResource FrameEntryStyle}" Padding="1">
+          <Frame.Content>
+            <Grid Padding="5,0,0,0" BackgroundColor="White">
+              <Editor VerticalOptions="Start" x:Name="txtMessage" TextColor="#484848"  ClassId="300" BackgroundColor="White" HeightRequest="100" />
+              <Label IsEnabled="False" Margin="0,5,0,0" x:Name="MessageTextOverlap"  Text="{x:Static local:AppResources.LContactMessage}"  TextColor="#484848"/>
+          </Grid>
+          </Frame.Content>
+        </Frame>
+
+            <StackLayout Padding="-3,10,-3,20">
+                <Button x:Name="SubmitButton"  Style="{StaticResource buttonStyle}" Clicked="OnSubmitButtonClicked"/>
+            </StackLayout>
+
+            <StackLayout  Padding="0,0,0,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                <Label x:Name="OfficeName" Style="{StaticResource SubTitleStyle}"  />
+            </StackLayout>
+            
+            <StackLayout Padding="10,0,10,0">
+                <StackLayout Orientation="Horizontal">
+                  <Image  Source="ico_address.png" />
+                  <Label x:Name="OfficeAddress" Style="{StaticResource SimpleTextStyle_Icon}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                  <Image  Source="ico_call.png" />
+                <Label x:Name="OfficePhoneNumber1" Style="{StaticResource SimpleTextStyle_Icon}"  >
+                  <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPhoneTapped" NumberOfTapsRequired="1" />
+                  </Label.GestureRecognizers>
+                </Label>
+                <Label Text=" / "   Style="{StaticResource SimpleTextStyle_Icon}"/>
+                <Label x:Name="OfficePhoneNumber2" Style="{StaticResource SimpleTextStyle_Icon}" >
+                  <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPhoneTapped" NumberOfTapsRequired="1" />
+                  </Label.GestureRecognizers>
+                </Label>
+              </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                  <Image  Source="ico_fax.png" />
+                <Label x:Name="OfficeFaxNumber"  Style="{StaticResource SimpleTextStyle_Icon}" />
+              </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                   <Image  Source="ico_email.png" />
+                <Label x:Name="OfficeEmail" TextColor="#f47421" >
+                  <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEmailTapped" NumberOfTapsRequired="1" />
+                  </Label.GestureRecognizers>
+                </Label>
+              </StackLayout>
+             </StackLayout>
+          </StackLayout>
+        <ActivityIndicator Grid.Row="0" Grid.RowSpan="2"  x:Name="loading" IsRunning="False" IsVisible="False" IsEnabled="False"
+                        HorizontalOptions="Center" VerticalOptions="Center" Color="#f47421">
+            <ActivityIndicator.Scale>
+               <OnPlatform x:TypeArguments="x:Double" iOS="2.0" Android="1.0" />
+            </ActivityIndicator.Scale>
+        </ActivityIndicator>
+  
+        
+        <!-- unusued code starts-->
+          <StackLayout IsVisible="False">
+        <StackLayout Orientation="Horizontal">
+            <Label Text="*" Style="{StaticResource Requirefieldtextstyle}" />
+            <Label x:Name ="ContactName" Style="{StaticResource SubTitleStyle}" />
+          </StackLayout>
+        <StackLayout Padding="0,-5,0,0">
+            <Frame   Padding="1"
+             OutlineColor="White"
+             HorizontalOptions="FillAndExpand"
+             VerticalOptions="Center"
+             BackgroundColor="White"	>
+              <Frame.Content>
+            <StackLayout x:Name="stack1" Padding="5,0,0,0"  BackgroundColor="#09091a" HeightRequest="35">
+            <Entry  HeightRequest="35"  ClassId="50" TextColor="White" BackgroundColor="#09091a"  VerticalOptions="FillAndExpand"/>
+            </StackLayout>
+              </Frame.Content>
+            </Frame>
+            </StackLayout>
+        <StackLayout Padding="0,-5,0,2">
+          <Label x:Name="NameAlert" Style="{StaticResource TextBoxAlertStyle}"/>
+        </StackLayout>
+          
+        <StackLayout Orientation="Horizontal">
+            <Label Text="*" Style="{StaticResource Requirefieldtextstyle}" />
+            <Label x:Name ="ContactEmail" Style="{StaticResource SubTitleStyle}" />
+          </StackLayout>
+        <StackLayout Padding="0,-5,0,0"  VerticalOptions="Center">
+           <Frame   Padding="1"
+          OutlineColor="White"
+          HorizontalOptions="FillAndExpand"
+          VerticalOptions="Center"
+          BackgroundColor="White"	>
+             <Frame.Content>
+             <StackLayout x:Name="stack2" Padding="5,0,0,0" BackgroundColor="#09091a"  VerticalOptions="Center">
+             <Entry  HeightRequest="35" TextColor="White"  VerticalOptions="FillAndExpand"  Keyboard="Email" ClassId="50"  BackgroundColor="#09091a"/>
+         </StackLayout>
+             </Frame.Content>
+           </Frame>
+         </StackLayout>
+        <StackLayout Padding="0,-5,0,2">
+          <Label x:Name="EmailAlert" Style="{StaticResource TextBoxAlertStyle}"/>
+         </StackLayout>
+          
+        <StackLayout Orientation="Horizontal">
+            <Label Text="*" Style="{StaticResource Requirefieldtextstyle}" />
+            <Label x:Name ="ContactMobileNumber" Style="{StaticResource SubTitleStyle}" />
+          </StackLayout>
+        <StackLayout Padding="0,-5,0,0">
+           <Frame   Padding="1"
+          OutlineColor="White"
+          HorizontalOptions="FillAndExpand"
+          VerticalOptions="Center"
+          BackgroundColor="White"	>
+             <Frame.Content>
+             <StackLayout x:Name="stack3" Padding="5,0,0,0" BackgroundColor="#09091a">
+              <Entry   HeightRequest="35" TextColor="White"  VerticalOptions="FillAndExpand"  Keyboard="Telephone" ClassId="15" BackgroundColor="#09091a"/>
+          </StackLayout>
+             </Frame.Content>
+           </Frame>
+         </StackLayout>
+        <StackLayout Padding="0,-5,0,2">
+           <Label x:Name="MobileAlert" Style="{StaticResource TextBoxAlertStyle}"/>
+         </StackLayout>
+          
+        <StackLayout Orientation="Horizontal">
+            <Label Text="*" Style="{StaticResource Requirefieldtextstyle}" />
+            <Label x:Name ="ContactSubject" Style="{StaticResource SubTitleStyle}" />
+          </StackLayout>
+        <StackLayout Padding="0,-5,0,0">
+             <Frame   Padding="1"
+          OutlineColor="White"
+          HorizontalOptions="FillAndExpand"
+          VerticalOptions="Center"
+          BackgroundColor="White"	>
+               <Frame.Content>
+              <StackLayout x:Name="stack4" Padding="5,0,0,0" BackgroundColor="#09091a" >
+              <Entry   HeightRequest="35" VerticalOptions="FillAndExpand" TextColor="White"  ClassId="100"  BackgroundColor="#09091a"/>
+           </StackLayout>
+             </Frame.Content>
+        </Frame>
+           </StackLayout>
+        <StackLayout Padding="0,-5,0,2">
+             <Label x:Name="SubjectAlert" Style="{StaticResource TextBoxAlertStyle}"/>
+          </StackLayout>
+          
+        <StackLayout Orientation="Horizontal">
+            <Label Text="*" Style="{StaticResource Requirefieldtextstyle}" />
+            <Label x:Name="ContactMessage" Style="{StaticResource SubTitleStyle}" />
+          </StackLayout>
+        <!--<StackLayout BackgroundColor="White" Padding="0.4,0.4,0.4,0.4">
+              <Editor x:Name="txtMessage" HeightRequest="100" TextColor="White"  ClassId="300" BackgroundColor="#09091a"/>
+          </StackLayout>-->
+        <StackLayout Padding="0,-5,0,0">
+           <!--<Frame   Padding="1"
+           OutlineColor="White"
+           HorizontalOptions="FillAndExpand"
+           VerticalOptions="Center"
+           BackgroundColor="White"	>
+             <Frame.Content>
+             <StackLayout Padding="5,0,0,0" BackgroundColor="#09091a">
+            <Editor x:Name="txtMessage" TextColor="White"  ClassId="300" BackgroundColor="#09091a" HeightRequest="100"/>
+          </StackLayout>
+             </Frame.Content>
+           </Frame>-->
+         </StackLayout>
+        <StackLayout Padding="0,-5,0,2">
+           <Label x:Name="MessageAlert" Style="{StaticResource TextBoxAlertStyle}"/>
+         </StackLayout>
+        <Label x:Name="lblstatus" Style="{StaticResource SimpleTextStyle}" />
+        </StackLayout>
+        <!-- unusued code ends-->
+      
+      
+      </Grid>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

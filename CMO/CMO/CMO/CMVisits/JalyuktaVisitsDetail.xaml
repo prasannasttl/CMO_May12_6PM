@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CMO.CMVisits.JalyuktaVisitsDetail"
+                 BackgroundColor="#FFFFFF"
+             Padding="10"
+                xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+
+ 
+   <Grid VerticalOptions="FillAndExpand" BackgroundColor="#F7F7F7" Padding="5,5,5,5" >
+		 <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+		  <StackLayout Grid.Row="0"  >
+ 			<Grid >
+        <ffimageloading:CachedImage DownsampleToViewSize="true"  x:Name="JalyuktaDetailImageBackgrnd" Source="photogalleryplaceholder.png" Aspect="Fill"/>
+        <ffimageloading:CachedImage DownsampleToViewSize="true"  x:Name="JalyuktaDetailImage" Aspect="Fill"/>
+    </Grid>
+			<Label x:Name="JalyuktaVisittitle" TextColor="#f47421" FontAttributes="Bold"/>
+			<StackLayout Orientation="Horizontal">
+        <Image Source="ico_calendar.png" />
+      	   		<Label x:Name="JalyuktaVisitDate" TextColor="#484848" />
+ 	     	</StackLayout>
+          </StackLayout> 
+          <StackLayout BackgroundColor="#F7F7F7" Padding="0,5,0,5"  VerticalOptions="FillAndExpand" Grid.Row="1" >
+      		 <ScrollView>
+      		  <StackLayout >
+       		   <Label x:Name="JalyuktaVisitDetail" TextColor="#484848"  LineBreakMode="WordWrap" />
+       		</StackLayout>
+   		   </ScrollView>
+				
+  		  </StackLayout>
+
+    </Grid>
+	
+</ContentPage>

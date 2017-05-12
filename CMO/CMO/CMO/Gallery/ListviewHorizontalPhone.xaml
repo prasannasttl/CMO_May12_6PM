@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              x:Class="CMO.Gallery.PhotosListDetailPhone"
+             BackgroundColor="#f7f7f7"  
+             xmlns:local="clr-namespace:CMO;assembly=CMO"
+             xmlns:labelLocal="clr-namespace:CMO.Gallery;assembly=CMO"
+              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+  
+  <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition  Height="*"/>
+    </Grid.RowDefinitions>
+     <Grid Grid.Row="0" IsVisible="False" x:Name="GridLargeImage" Padding="0,5,0,0"  VerticalOptions="Center">
+       <Image   Source="photogalleryplaceholder" HorizontalOptions="Fill" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+       <ffimageloading:CachedImage DownsampleToViewSize="true"   x:Name="LargeImage" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Aspect="AspectFill"/>
+         <StackLayout VerticalOptions="EndAndExpand" Padding="0,0,0,-2"  HorizontalOptions="FillAndExpand" >
+              <labelLocal:WrappedTruncatedLabelTwoLine x:Name="LargeImageTitle" 
+					VerticalTextAlignment="Center" HorizontalTextAlignment="Center"  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" 
+					TextColor="White"  BackgroundColor="#132561" Opacity="0.88" HeightRequest="40" />
+          </StackLayout>
+			   <ActivityIndicator x:Name="loading1" IsRunning="false" IsEnabled="false"
+                        HorizontalOptions="Center" VerticalOptions="Center" Color="#f47421">
+          <ActivityIndicator.Scale>
+        <OnPlatform x:TypeArguments="x:Double" iOS="2.0" Android="1.0" />
+      </ActivityIndicator.Scale>
+    </ActivityIndicator>
+      </Grid>
+     <Grid Grid.Row="1" IsVisible="False" x:Name="SlidingImageListLayout" Padding="0,-4,0,5"   >
+       <ListView CachingStrategy="RecycleElement" x:Name="xamllisthorizontal"  RowHeight="100" SeparatorVisibility="None" >
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell StyleId="none" >
+              <ViewCell.View >
+                <Grid Padding="5,5,5,0" ColumnSpacing="5">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+                  <Grid Grid.Column="0" BindingContext="{Binding }">
+                    <Image  Source="{Binding FirstPlaceholder}"  Aspect="AspectFill"   />
+                    <ffimageloading:CachedImage DownsampleToViewSize="true"   Source="{Binding FirstImageThumbUrl}" Aspect="AspectFill"/>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapFirstImage" NumberOfTapsRequired="1" />
+                    </Grid.GestureRecognizers>
+                  </Grid>
+                  <Grid Grid.Column="1" BindingContext="{Binding }">
+                    <Image  Source="{Binding SecondPlaceholder}"  Aspect="AspectFill"   />
+                    <ffimageloading:CachedImage DownsampleToViewSize="true"   Source="{Binding SecondImageThumbUrl}" Aspect="AspectFill"/>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapSecondImage" NumberOfTapsRequired="1" />
+                    </Grid.GestureRecognizers>
+                  </Grid>
+                  <Grid Grid.Column="2" BindingContext="{Binding }">
+                    <Image  Source="{Binding ThirdPlaceholder}"  Aspect="AspectFill"   />
+                    <ffimageloading:CachedImage DownsampleToViewSize="true"   Source="{Binding ThirdImageThumbUrl}" Aspect="AspectFill"/>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapThirdImage" NumberOfTapsRequired="1" />
+                    </Grid.GestureRecognizers>
+                  </Grid>
+                </Grid>
+              </ViewCell.View > 
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </Grid>
+     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Center" Grid.Row="1">
+      <ActivityIndicator x:Name="loading" IsRunning="True"
+                     HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Color="#f47421">
+        <ActivityIndicator.Scale>
+          <OnPlatform x:TypeArguments="x:Double" iOS="2.0" Android="1.0" />
+        </ActivityIndicator.Scale>
+      </ActivityIndicator>
+    </StackLayout> 
+
+</Grid>
+</ContentPage>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<t:SlideMenuView xmlns="http://xamarin.com/schemas/2014/forms"
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		xmlns:t="clr-namespace:SlideOverKit"
+		x:Class="SlideOverKit.MoreSample.RightSideMasterPageBottom"
+		xmlns:local="clr-namespace:SlideOverKit.MoreSample"
+    xmlns:localappresource = "clr-namespace:CMO;assembly=CMO"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    BackgroundColor="#eeeeee"
+  >
+
+  <t:SlideMenuView.Resources>
+    <ResourceDictionary>
+      <local:OpenInstallButtonBackGroundConverter x:Key="OpenInstallButtonBackGroundConverter" />
+      <local:OpenInstallButtonTextConverter x:Key="OpenInstallButtonTextConverter" />
+    </ResourceDictionary>
+  </t:SlideMenuView.Resources>
+  <t:SlideMenuView.Content>
+    <StackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand"
+                BackgroundColor="Transparent" >
+      <Image x:Name="flipper" Aspect="Fill" Source="flip_button.png" HorizontalOptions="FillAndExpand" HeightRequest="25">
+</Image>
+      <StackLayout x:Name="loadingIndicator" VerticalOptions="CenterAndExpand">
+        <ActivityIndicator x:Name="loading" IsRunning="True"
+                       HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Color="White">
+          <ActivityIndicator.Scale>
+            <OnPlatform x:TypeArguments="x:Double" iOS="2.0" Android="1.0" />
+          </ActivityIndicator.Scale>
+        </ActivityIndicator>
+
+      </StackLayout>
+      <Grid x:Name="DraggerGrid" VerticalOptions="Center" IsEnabled="false"
+         HorizontalOptions="Fill" BackgroundColor="#e2e2e2" HeightRequest="75">
+        <Label  x:Name="MahaGov" Text="MAHARASHTRA GOVERNMENT APPS"
+                VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
+                HorizontalTextAlignment="Center" TextColor="#484848"  BackgroundColor="#e2e2e2"
+                VerticalTextAlignment="Center" FontAttributes="Bold">
+          <Label.GestureRecognizers>
+            <TapGestureRecognizer Tapped="SliderTapped" NumberOfTapsRequired="1" />
+          </Label.GestureRecognizers>
+
+        </Label> 
+      </Grid>
+      <StackLayout  HorizontalOptions="Center" VerticalOptions="FillAndExpand"  Padding="0,0,0,0"  BackgroundColor="#eeeeee" >
+         <ListView CachingStrategy="RecycleElement" SeparatorVisibility="None" x:Name="AppList" HorizontalOptions="FillAndExpand" VerticalOptions="Fill"  IsVisible="false" HasUnevenRows="true" BackgroundColor="#eeeeee">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell StyleId="none" >
+                <ViewCell.View >
+                 <Grid BackgroundColor="#eeeeee" Padding="10,10,10,0">
+                  <Grid BackgroundColor="#ffffff" Padding="10">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="Auto" />
+                      <ColumnDefinition Width="*" />
+                      <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <ffimageloading:CachedImage DownsampleToViewSize="true"  Margin="5,0,0,0" Source="applicationListIcon.png" Grid.Column="0" WidthRequest="40" HeightRequest="40" Aspect="AspectFit"/>
+                    <ffimageloading:CachedImage DownsampleToViewSize="true"  Margin="5,0,0,0" Source="{Binding Icon}" Grid.Column="0" WidthRequest="40" HeightRequest="40" Aspect="AspectFit" />
+                    <Label Margin="10,0,0,0" Grid.Column="1" Text="{Binding Name}" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="#484848" LineBreakMode="WordWrap" FontSize="{Binding SetFontSize}"/>
+                    <StackLayout Grid.Column="2" >
+                      <Button VerticalOptions="Center"
+                              TextColor="{Binding AppStatus, Converter={StaticResource OpenInstallButtonTextConverter}}"
+                              BackgroundColor="{Binding AppStatus, Converter={StaticResource OpenInstallButtonBackGroundConverter}}"
+                              ClassId="{Binding PackageName}" Text="{Binding AppStatus}"
+                              Clicked="AppStatusButtonCLicked"  FontSize="{Binding SetFontSize}"
+                              WidthRequest="{Binding SetButtonSize}"
+                              >
+                        <!--<Button.HeightRequest>
+                          <OnIdiom x:TypeArguments="x:Double" Tablet="45" Phone="35" />
+                        </Button.HeightRequest>-->
+                      </Button>
+                    </StackLayout>
+                      </Grid>
+                 </Grid>
+                </ViewCell.View>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </StackLayout>
+    </StackLayout>
+
+  </t:SlideMenuView.Content>
+</t:SlideMenuView>

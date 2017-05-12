@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CMO.Gallery.MagazineGallery"
+             BackgroundColor="#FFFFFF"
+             Padding="10,10,10,0">
+  <ContentPage.Content>
+   
+    <Grid VerticalOptions="FillAndExpand">
+      <WebView x:Name="web" VerticalOptions="FillAndExpand" />
+      <ActivityIndicator x:Name="loading" IsRunning="True" IsEnabled="True"
+                          HorizontalOptions="Center" VerticalOptions="Center" Color="#f47421">
+        <ActivityIndicator.Scale>
+          <OnPlatform x:TypeArguments="x:Double" iOS="2.0" Android="1.0" />
+        </ActivityIndicator.Scale>
+      </ActivityIndicator>
+    </Grid>
+  </ContentPage.Content>
+</ContentPage>

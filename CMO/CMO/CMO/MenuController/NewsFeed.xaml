@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CMO.MenuController.NewsFeed"       BackgroundColor="#09091a"  >
+
+  <!--<WebView x:Name="web" VerticalOptions="Fill" />-->
+<Grid  RowSpacing="-5" >
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+
+
+  <Grid ColumnSpacing="3" Grid.Row="0" HeightRequest="50" VerticalOptions="Start" >
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+
+    <StackLayout x:Name="stckTab1" Grid.Column="0" ClassId="Tab1">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="1.5*" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="0.1*" />
+        </Grid.RowDefinitions>
+        <Image x:Name="ImgTwitter" Grid.Row="0" Margin="0,3,0,0" Source="ico_call.png"/>
+        <Label x:Name="LblTwitter" Grid.Row="1" TextColor="#f15a23" HorizontalTextAlignment ="Center" Text="Twitter"/>
+        <StackLayout Grid.Row="2" BackgroundColor="#f15a23" />
+      </Grid>
+    </StackLayout>
+
+    <StackLayout x:Name="stckTab2" BackgroundColor="#f15a23" Grid.Column="1" ClassId="Tab2" >
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="0.1*" />
+        </Grid.RowDefinitions>
+        <Image x:Name="ImgFB" Grid.Row="0" Margin="0,3,0,0" Source="ico_address.png" />
+        <Label x:Name="LblFB" TextColor="White" Grid.Row="1" HorizontalTextAlignment ="Center" Text="Facebook"/>
+        <StackLayout Grid.Row="2" BackgroundColor="#f15a23" />
+      </Grid>
+    </StackLayout>
+
+    <StackLayout x:Name="stckTab3" BackgroundColor="#f15a23" Grid.Column="2" ClassId="Tab3">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="0.1*" />
+        </Grid.RowDefinitions>
+        <Image x:Name="ImgYoutube" Grid.Row="0" Margin="0,3,0,0" Source="ico_fax.png"/>
+        <Label x:Name="LblYoutube" TextColor="White" Grid.Row="1" HorizontalTextAlignment ="Center" Text="Youtube"/>
+        <StackLayout Grid.Row="2" BackgroundColor="#f15a23" />
+      </Grid>
+    </StackLayout>
+
+  </Grid>
+
+  <WebView Grid.Row="1" x:Name="webTwitter" VerticalOptions="Fill" IsVisible="True" />
+  <WebView Grid.Row="1" x:Name="webFB" VerticalOptions="Fill"  IsVisible="False" />
+  <WebView Grid.Row="1" x:Name="webYoutube" VerticalOptions="Fill"  IsVisible="False" />
+  </Grid>
+</ContentPage>

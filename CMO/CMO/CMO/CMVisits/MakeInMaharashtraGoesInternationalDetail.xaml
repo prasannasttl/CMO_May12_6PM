@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="CMO.MakeInMaharashtraGoesInternationalDetail"
+	           BackgroundColor="#FFFFFF"
+             Padding="10"
+             xmlns:local="clr-namespace:CMO;assembly=CMO"
+                xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+
+  <Grid VerticalOptions="FillAndExpand" BackgroundColor="#F7F7F7"  >
+
+    <Grid VerticalOptions="FillAndExpand" BackgroundColor="#F7F7F7" Padding="5,5,5,5" >
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <StackLayout Grid.Row="0" x:Name="Mainstack1"  IsVisible="False">
+        <Grid >
+          <ffimageloading:CachedImage DownsampleToViewSize="true"  x:Name="JalyuktaDetailImageBackgrnd" Source="photogalleryplaceholder.png" Aspect="Fill"/>
+          <ffimageloading:CachedImage DownsampleToViewSize="true"  x:Name="JalyuktaDetailImage" Aspect="Fill"/>
+        </Grid>
+        <Label x:Name="JalyuktaVisittitle" TextColor="#f47421" FontAttributes="Bold"/>
+        <StackLayout Orientation="Horizontal">
+          <Image Source="ico_calendar.png" />
+          <Label x:Name="JalyuktaVisitDate" TextColor="#484848" />
+        </StackLayout>
+      </StackLayout>
+      <StackLayout Grid.Row="1"   x:Name="Mainstack2"  IsVisible="False" BackgroundColor="#F7F7F7" Padding="0,5,0,5"  VerticalOptions="FillAndExpand">
+        <ScrollView>
+          <StackLayout >
+            <Label x:Name="JalyuktaVisitDetail" TextColor="#484848"  LineBreakMode="WordWrap" />
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+              <StackLayout Grid.Column="0" x:Name="PhotoGrid" Orientation="Horizontal" IsVisible="false" IsEnabled="false">
+                <Image Source="ico_photos.png"/>
+                <Label Text="{x:Static local:AppResources.LPhotos}" TextColor="#484848"/>
+                <StackLayout.GestureRecognizers>
+                  <TapGestureRecognizer
+                          Tapped="TapPhotoImage"
+                          NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+              </StackLayout>
+              <StackLayout Grid.Column="1" x:Name="VideoGrid"  Orientation="Horizontal" IsVisible="false" IsEnabled="false">
+                <Image Source="ico_videos.png"/>
+                <Label Text="{x:Static local:AppResources.LVideos}" TextColor="#484848"/>
+                <StackLayout.GestureRecognizers>
+                  <TapGestureRecognizer
+                          Tapped="TapVideoImage"
+                          NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+              </StackLayout>
+            </Grid>
+            <StackLayout x:Name="TwitterGrid" Orientation="Horizontal"  IsVisible="false" IsEnabled="false" >
+              <Image Source="ico_twitter.png"  />
+              <Label Text="{x:Static local:AppResources.LMoreOnTwitter}"  TextColor="#484848">
+                <Label.GestureRecognizers>
+                  <TapGestureRecognizer
+                          Tapped="TapMoreOnTwitter"
+                          NumberOfTapsRequired="1" />
+                </Label.GestureRecognizers>
+              </Label>
+            </StackLayout>
+          </StackLayout>
+        </ScrollView>
+
+      </StackLayout>
+
+    </Grid>
+    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+      <ActivityIndicator x:Name="loading" IsRunning="True"
+                     HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Color="#f47421">
+        <ActivityIndicator.Scale>
+          <OnPlatform x:TypeArguments="x:Double" iOS="2.0" Android="1.0" />
+        </ActivityIndicator.Scale>
+      </ActivityIndicator>
+    </StackLayout>
+  </Grid>
+</ContentPage>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<resources>
+  
+  <!-- theme for splash screen  -->
+    <style name="MyTheme.Splash" parent ="android:Theme.Material">
+       <item name="android:windowBackground">@drawable/splash</item>
+       <item name="android:windowNoTitle">true</item>
+      <item name="android:colorPrimaryDark">#f68946</item>
+      <item name="android:statusBarColor">#f47421</item>
+    </style>
+
+   <style name="MyTheme" parent="android:Theme.Material.Light.DarkActionBar">
+		<item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
+		<!-- set color of page including actionbar-->
+		<!--<item name="android:background">#FFFFFF</item>-->
+        <item name="android:windowActionBar">true</item>
+        <item name="android:windowNoTitle">false</item>
+		<!--   your app branding color for the app bar -->
+    	<item name="android:colorPrimary">#141B3D</item>
+    	<!--   darker variant for the status bar and contextual app bars -->
+    	<item name="android:colorPrimaryDark">#323E5E</item>
+    	<!--   theme UI controls like checkboxes and text fields -->
+    	<item name="android:colorAccent">#f47421</item>
+    	<!-- set color of page without actionbar-->
+		<!--<item name="android:windowBackground">#ffffff</item>-->
+		<!-- default text color of the text  e.g picker list item text color -->
+		<item name="android:textColorPrimary">#484848</item>
+  </style>
+	
+  <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
+    <item name="android:datePickerStyle">@style/MyDatePickerStyle</item>
+  </style>
+	
+  <style name="MyDatePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">
+    <item name="android:datePickerMode">spinner</item>
+  </style> 
+	
+</resources>

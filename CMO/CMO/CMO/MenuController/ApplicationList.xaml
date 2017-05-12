@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CMO.MenuController.ApplicationList"
+              BackgroundColor="#FFFFFF"
+              xmlns:local="clr-namespace:SlideOverKit.MoreSample"
+  Padding="5"
+                xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+        <Style x:Key="buttonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+    
+      </Style>
+      <local:OpenInstallButtonBackGroundConverter x:Key="OpenInstallButtonBackGroundConverter" />
+      <local:OpenInstallButtonTextConverter x:Key="OpenInstallButtonTextConverter" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Content>
+     <StackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand"  BackgroundColor="Transparent" >
+      <StackLayout x:Name="loadingIndicator" VerticalOptions="CenterAndExpand">
+        <ActivityIndicator x:Name="loading" IsRunning="True"
+                       HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Color="#f47421">
+          <ActivityIndicator.Scale>
+            <OnPlatform x:TypeArguments="x:Double" iOS="2.0" Android="1.0" />
+          </ActivityIndicator.Scale>
+        </ActivityIndicator>
+      </StackLayout>
+      <ListView CachingStrategy="RecycleElement" SeparatorVisibility="None" x:Name="AppList"  BackgroundColor="#FCFCFC" HorizontalOptions="FillAndExpand" VerticalOptions="Fill"  IsVisible="false" HasUnevenRows="true">
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                <ViewCell StyleId="none" >
+                  <ViewCell.View >
+                    <Grid BackgroundColor="#FFFFFF" Padding="0,5,0,5">
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                      </Grid.ColumnDefinitions>
+                      <Image Source="applicationListIcon.png" Grid.Column="0" WidthRequest="40" HeightRequest="40" Aspect="AspectFill"/>
+                      <ffimageloading:CachedImage DownsampleToViewSize="true"  Source="{Binding Icon}" Grid.Column="0" WidthRequest="40" HeightRequest="40" Aspect="AspectFill" />
+                      <Label Grid.Column="1" Text="{Binding Name}" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="#484848" LineBreakMode="WordWrap" FontSize="{Binding SetFontSize}"/>
+                      <Button TextColor="{Binding AppStatus, Converter={StaticResource OpenInstallButtonTextConverter}}"  BackgroundColor="{Binding AppStatus, Converter={StaticResource OpenInstallButtonBackGroundConverter}}" Grid.Column="2"  ClassId="{Binding PackageName}" Text="{Binding AppStatus}" Clicked="AppStatusButtonCLicked"   FontSize="{Binding SetFontSize}" WidthRequest="{Binding SetButtonSize}"/>
+                    </Grid>
+                  </ViewCell.View>
+                </ViewCell>
+              </DataTemplate>
+            </ListView.ItemTemplate>
+          </ListView>
+      </StackLayout>
+     </ContentPage.Content>
+</ContentPage>

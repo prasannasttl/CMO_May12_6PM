@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CMO.Gallery.NewsGalleryListPage"
+             BackgroundColor="#FFFFFF"
+             Padding="4,4,4,4"
+		         xmlns:labelLocal="clr-namespace:CMO.Gallery;assembly=CMO" 
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+  
+  <ContentPage.Content>
+    <Grid HorizontalOptions="Center"  BackgroundColor="Transparent"  VerticalOptions="FillAndExpand" >
+   
+
+       <ListView CachingStrategy="RecycleElement"
+      IsPullToRefreshEnabled="True"  x:Name="NewsGalleryLists" SeparatorVisibility="None"
+      VerticalOptions="FillAndExpand" BackgroundColor="#FFFFFF"
+    IsVisible="False"
+       HasUnevenRows="False">
+        <!--<ListView.GroupHeaderTemplate>
+        <DataTemplate>
+          <ViewCell >
+            <StackLayout BackgroundColor="#ffffff">
+              <Label Text="{Binding LongName}" TextColor="#f47421"/>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.GroupHeaderTemplate>-->
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell StyleId="none" >
+              <ViewCell.View >
+                <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#F7F7F7" Padding="5,5,5,5">
+                  <StackLayout BackgroundColor="#F7F7F7" Padding="1" HorizontalOptions="Fill" VerticalOptions="FillAndExpand">
+                    <Grid HorizontalOptions="Fill" VerticalOptions="FillAndExpand" BackgroundColor="#F7F7F7" >
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding ImageWidth}" />
+                        <ColumnDefinition Width="{Binding TitleWidth}" />
+                      </Grid.ColumnDefinitions>
+                      <Image  Grid.Column="0"  Source="newsgalleryplaceholder"  VerticalOptions="FillAndExpand" Aspect="Fill" />
+                      <ffimageloading:CachedImage DownsampleToViewSize="true"   Grid.Column="0"  Source="{Binding ipad_thumb_path}"  VerticalOptions="FillAndExpand" Aspect="Fill" />
+                      <Grid Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" BackgroundColor="#F7F7F7" >
+                        <Grid.RowDefinitions>
+                          <RowDefinition Height="Auto" />
+                          <RowDefinition Height="Auto" />
+                          <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label  Grid.Row="0" FontSize="{Binding SetFontSize}" Text="{Binding title}"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="FillAndExpand"  TextColor="#f47421" LineBreakMode="TailTruncation" FontAttributes="Bold"/>
+
+                        <labelLocal:WrappedTruncatedLabel  Grid.Row="1" FontSize="{Binding SetFontSize}"  Text="{Binding content}"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Start"   TextColor="#484848" LineBreakMode="TailTruncation" />
+                        <StackLayout BackgroundColor="#F7F7F7"   Grid.Row="2" HorizontalOptions="Start" Orientation="Horizontal"  >
+                          <Image  HeightRequest="20" WidthRequest="20" HorizontalOptions="Start" Source="ico_calendar.png"  />
+                          <Label Text="{Binding date}" FontSize="{Binding SetFontSize}" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" HorizontalOptions="Start"  VerticalOptions="Center"   TextColor="#484848"/>
+                        </StackLayout>
+                      </Grid>
+                    </Grid>
+                  </StackLayout>
+                </StackLayout>
+              </ViewCell.View>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+
+
+      <StackLayout x:Name="loadingIndicator"
+           VerticalOptions="CenterAndExpand">
+        <ActivityIndicator x:Name="loading" IsRunning="True"
+                       HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Color="#f47421">
+          <ActivityIndicator.Scale>
+            <OnPlatform x:TypeArguments="x:Double" iOS="2.0" Android="1.0" />
+          </ActivityIndicator.Scale>
+        </ActivityIndicator>
+      </StackLayout>
+    </Grid>
+  </ContentPage.Content>
+</ContentPage>

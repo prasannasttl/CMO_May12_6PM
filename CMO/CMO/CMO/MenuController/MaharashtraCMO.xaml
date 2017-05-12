@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CMO.MenuController.MaharashtraCMO"
+             xmlns:local="clr-namespace:CMO.MenuController;assembly=CMO"
+             xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             xmlns:sliderRef="clr-namespace:SlideOverKit.MoreSample"
+             xmlns:localtitle = "clr-namespace:CMO;assembly=CMO"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:labelTitle = "clr-namespace:CMO;assembly=CMO"
+             Title="{x:Static labelTitle:AppResources.LMaharashtraCMO}">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <local:TickMarkIconVisibilityConverter x:Key="TickMarkIconVisibilityConverter" />
+      <Style x:Key="AppLabel"  TargetType="Label">
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="TextColor" Value="#484848" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="LineBreakMode" Value="TailTruncation" />
+        <Setter Property="Grid.Row" Value="1" />
+        <Setter Property="FontSize" Value="{Binding SetFontSize}" />
+      </Style>
+      <Style x:Key="AppIcon"  TargetType="ffimageloading:CachedImage">
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="Aspect" Value="AspectFit" />
+        <Setter Property="Grid.Row" Value="0" />
+      </Style>
+            <Style x:Key="TickMarkIcon"  TargetType="Image">
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="Source" Value="tick" />
+                <Setter Property="Aspect" Value="AspectFit" />
+                <!--<Setter Property="HeightRequest" Value="25" />
+                <Setter Property="WidthRequest" Value="25" />-->
+                <Setter Property="Grid.Row" Value="0" />
+            </Style>
+        </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Content>
+    <Grid RowSpacing="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="3"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <Grid Grid.Row="0"  BackgroundColor="#ffffff">
+
+        <Image Source="home_banner_V1.png" HorizontalOptions="FillAndExpand"
+                              VerticalOptions="FillAndExpand" Aspect="Fill"   />
+        <StackLayout HorizontalOptions="End" VerticalOptions="End" BackgroundColor="Transparent" >
+          <StackLayout.Padding>
+            <OnIdiom x:TypeArguments="Thickness" Tablet="0,0,20,45" Phone="0,0,10,10" />
+          </StackLayout.Padding>
+                    <Button x:Name="BannerButton" Text="{x:Static labelTitle:AppResources.LChiefMinisterOffice}"  TextColor="White" BorderWidth="0"
+           BackgroundColor="#141B3D" HorizontalOptions="End" VerticalOptions="End" Clicked="CMOfficeTap" />
+                </StackLayout>
+      </Grid>
+      <Grid Grid.Row="1" HeightRequest="3" BackgroundColor="#f47421"/>
+      <Grid RowSpacing="0" Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#eeeeee">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" x:Name="DraggerGrid" VerticalOptions="Center" Padding="0,10,0,10"
+              HorizontalOptions="Fill" BackgroundColor="#eeeeee">
+          <Label  x:Name="MahaGov" Text="{x:Static labelTitle:AppResources.LMaharashtraGovernmentApps}"
+                  VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
+                  HorizontalTextAlignment="Center" TextColor="#484848"
+                  VerticalTextAlignment="Center"  FontAttributes="Bold"/>
+        </Grid>
+        <Grid Grid.Row="1" HorizontalOptions="FillAndExpand" Padding="10,0,10,0"
+              VerticalOptions="FillAndExpand" BackgroundColor="#eeeeee">
+        <!--  <control:CarouselView x:Name="NewsCarouselView"   HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                ItemsSource="{Binding MoreAppsList}"
+                                Position="{Binding Position, Mode=TwoWay}">-->
+            <controls:CarouselViewControl x:Name="NewsCarouselView"
+									  ItemsSource="{Binding MoreAppsList}"
+                                	  Position="{Binding Position, Mode=TwoWay}"
+                                      HorizontalOptions="FillAndExpand"
+                                      VerticalOptions="FillAndExpand"
+                                      AnimateTransition="true"
+                                      IndicatorsShape="Circle"
+                                      InterPageSpacing="5"
+                                      InterPageSpacingColor="#eeeeee"
+                                      IsSwipingEnabled="true"
+                                      Orientation="Horizontal"
+                                      ShowIndicators="false" 
+									  IndicatorsTintColor = "#C6C6C6"
+									  CurrentPageIndicatorTintColor= "#f47421"
+								     BackgroundColor="#eeeeee">
+			<controls:CarouselViewControl.ItemTemplate>
+              <DataTemplate>
+                <Grid HorizontalOptions="Fill"  BackgroundColor="#eeeeee">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                  </Grid.RowDefinitions>
+                  <Grid Grid.Row="0" Grid.Column="0" Padding="0,10,0,0" BindingContext="{Binding }" >
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="*"/>
+                      <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ffimageloading:CachedImage DownsampleToViewSize="true"  Source="{Binding Itm1_Icon}" Style="{StaticResource AppIcon}"/>
+                    <Image  Style="{StaticResource TickMarkIcon}" Margin="{Binding TickMarkMargin}" IsVisible="{Binding Itm1_AppStatus, Converter={StaticResource TickMarkIconVisibilityConverter}}"  />
+                    <Label Text="{Binding Itm1_Name}" Style="{StaticResource AppLabel}"/>
+                    <Grid.GestureRecognizers>
+                      <TapGestureRecognizer Tapped="App1Tap" />
+                    </Grid.GestureRecognizers>
+                  </Grid>
+                  <Grid Grid.Row="0" Grid.Column="1" Padding="0,10,0,0">
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="*"/>
+                      <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ffimageloading:CachedImage DownsampleToViewSize="true"  Source="{Binding Itm2_Icon}" Style="{StaticResource AppIcon}"/>
+                    <Image  Style="{StaticResource TickMarkIcon}" Margin="{Binding TickMarkMargin}" IsVisible="{Binding Itm2_AppStatus, Converter={StaticResource TickMarkIconVisibilityConverter}}"  />
+                    <Label Text="{Binding Itm2_Name}" Style="{StaticResource AppLabel}"/>
+                    <Grid.GestureRecognizers>
+                      <TapGestureRecognizer Tapped="App2Tap" />
+                    </Grid.GestureRecognizers>
+                  </Grid>
+                  <Grid Grid.Row="0" Grid.Column="2" Padding="0,10,0,0">
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="*"/>
+                      <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ffimageloading:CachedImage DownsampleToViewSize="true"  Source="{Binding Itm3_Icon}" Style="{StaticResource AppIcon}"/>
+                    <Image  Style="{StaticResource TickMarkIcon}" Margin="{Binding TickMarkMargin}" IsVisible="{Binding Itm3_AppStatus, Converter={StaticResource TickMarkIconVisibilityConverter}}"  />
+                    <Label Text="{Binding Itm3_Name}" Style="{StaticResource AppLabel}"/>
+                    <Grid.GestureRecognizers>
+                      <TapGestureRecognizer Tapped="App3Tap" />
+                    </Grid.GestureRecognizers>
+                  </Grid>
+                  <Grid Grid.Row="1" Grid.Column="0">
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="*"/>
+                      <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ffimageloading:CachedImage DownsampleToViewSize="true"  Source="{Binding Itm4_Icon}" Style="{StaticResource AppIcon}"/>
+                    <Image  Style="{StaticResource TickMarkIcon}" Margin="{Binding TickMarkMargin}" IsVisible="{Binding Itm4_AppStatus, Converter={StaticResource TickMarkIconVisibilityConverter}}"  />
+                    <Label Text="{Binding Itm4_Name}" Style="{StaticResource AppLabel}"/>
+                    <Grid.GestureRecognizers>
+                      <TapGestureRecognizer Tapped="App4Tap" />
+                    </Grid.GestureRecognizers>
+                  </Grid>
+                  <Grid Grid.Row="1" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="*"/>
+                      <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ffimageloading:CachedImage DownsampleToViewSize="true"  Source="{Binding Itm5_Icon}" Style="{StaticResource AppIcon}"/>
+                    <Image  Style="{StaticResource TickMarkIcon}" Margin="{Binding TickMarkMargin}" IsVisible="{Binding Itm5_AppStatus, Converter={StaticResource TickMarkIconVisibilityConverter}}"  />
+                    <Label Text="{Binding Itm5_Name}" Style="{StaticResource AppLabel}"/>
+                    <Grid.GestureRecognizers>
+                      <TapGestureRecognizer Tapped="App5Tap" />
+                    </Grid.GestureRecognizers>
+                  </Grid>
+                  <Grid Grid.Row="1" Grid.Column="2">
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="*"/>
+                      <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ffimageloading:CachedImage DownsampleToViewSize="true"  Source="{Binding Itm6_Icon}" Style="{StaticResource AppIcon}"/>
+                    <Image  Style="{StaticResource TickMarkIcon}" Margin="{Binding TickMarkMargin}" IsVisible="{Binding Itm6_AppStatus, Converter={StaticResource TickMarkIconVisibilityConverter}}"  />
+                    <Label Text="{Binding Itm6_Name}" Style="{StaticResource AppLabel}"/>
+                    <Grid.GestureRecognizers>
+                      <TapGestureRecognizer Tapped="App6Tap" />
+                    </Grid.GestureRecognizers>
+                  </Grid>
+                </Grid>
+              </DataTemplate>
+            </controls:CarouselViewControl.ItemTemplate>
+          </controls:CarouselViewControl>
+        </Grid>
+        <Grid Grid.Row="2" VerticalOptions="End" Padding="0,0,0,15" BackgroundColor="#eeeeee">
+          <local:CarouselIndicators   IndicatorHeight="15" IndicatorWidth="15"  VerticalOptions="End"  UnselectedIndicator="unselected_circle.png" SelectedIndicator="selected_circle.png" Position="{Binding Position}" ItemsSource="{Binding MoreAppsList}" />
+        </Grid> 
+      </Grid>
+    </Grid>
+  </ContentPage.Content>
+</ContentPage>
+
+<!--
+  <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Row="0" Grid.Column="0" Source="{Binding Itm1_Icon}" Style="{StaticResource AppIcon}"/>
+  <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Row="0" Grid.Column="1" Source="{Binding Itm2_Icon}" Style="{StaticResource AppIcon}"/>
+  <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Row="0" Grid.Column="2" Source="{Binding Itm3_Icon}" Style="{StaticResource AppIcon}"/>
+  <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Row="2" Grid.Column="0" Source="{Binding Itm4_Icon}" Style="{StaticResource AppIcon}"/>
+  <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Row="2" Grid.Column="1" Source="{Binding Itm5_Icon}" Style="{StaticResource AppIcon}"/>
+  <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Row="2" Grid.Column="2" Source="{Binding Itm6_Icon}" Style="{StaticResource AppIcon}"/>
+  <Label Grid.Row="1" Grid.Column="0" Text="{Binding Itm1_Name}" Style="{StaticResource AppLabel}"/>
+  <Label Grid.Row="1" Grid.Column="1" Text="{Binding Itm2_Name}" Style="{StaticResource AppLabel}"/>
+  <Label Grid.Row="1" Grid.Column="2" Text="{Binding Itm3_Name}" Style="{StaticResource AppLabel}"/>
+  <Label Grid.Row="3" Grid.Column="0" Text="{Binding Itm4_Name}" Style="{StaticResource AppLabel}"/>
+  <Label Grid.Row="3" Grid.Column="1" Text="{Binding Itm5_Name}" Style="{StaticResource AppLabel}"/>
+  <Label Grid.Row="3" Grid.Column="2" Text="{Binding Itm6_Name}" Style="{StaticResource AppLabel}"/>
+-->

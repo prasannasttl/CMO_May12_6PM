@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<t:MenuContainerPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CMO.MenuController.HomeScreen"
+             xmlns:t="clr-namespace:SlideOverKit"
+             xmlns:GradientStackLayout="clr-namespace:CMO.MenuController;assembly=CMO"
+             xmlns:local="clr-namespace:CMO.MenuController;assembly=CMO"
+             xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             xmlns:labelTitle = "clr-namespace:CMO;assembly=CMO"         
+             xmlns:LabelTwoLine="clr-namespace:CMO.Gallery;assembly=CMO" 
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             Title="{x:Static labelTitle:AppResources.LHome}">
+  <t:MenuContainerPage.Resources>
+    <ResourceDictionary>
+    	<Style x:Key="HeaderLabel"  TargetType="Label">
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+		    <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="White" />
+    	  <Setter Property="HeightRequest" Value="40" />
+		    <Setter Property="VerticalTextAlignment" Value="Center" />	
+        
+	</Style>
+      <Style x:Key="HeaderLabelGradientStyle"  TargetType="GradientStackLayout:Gradient_Stack">
+		    <!--<Setter Property="Padding" Value="0,0,0,-3" />-->
+         <Setter Property="Margin" Value="0,0,0,-3" />
+        <Setter Property="VerticalOptions" Value="EndAndExpand" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+	    </Style>
+      <Style x:Key="ModuleHeaderImageStyle"  TargetType="Image">
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="Aspect" Value="Fill" />
+      </Style>
+
+      <Style x:Key="GalleryPhotosLabelStyle"  TargetType="Label">
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+		    <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="TextColor" Value="White" />
+    	  <Setter Property="HeightRequest" Value="35" />
+		    <Setter Property="VerticalTextAlignment" Value="Center" />	
+	</Style>
+      <Style x:Key="GalleryPhotosGridStyle"  TargetType="Grid">
+        <!--<Setter Property="BackgroundColor" Value="#f7f7f7" />-->
+		    <Setter Property="HeightRequest" Value="100" />
+        <Setter Property="WidthRequest" Value="150" />
+	    </Style>
+      <Style x:Key="GalleryPhotosGradientStyle"  TargetType="GradientStackLayout:Gradient_Stack">
+		    <Setter Property="Padding" Value="0,0,0,-1" />
+        <Setter Property="VerticalOptions" Value="EndAndExpand" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+	    </Style>
+      <Style x:Key="PlacholderHeaderImageStyle"  TargetType="Image">
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="Aspect" Value="Fill" />
+        <Setter Property="Source" Value="newsgalleryplaceholder" />
+      </Style>
+      <Style x:Key="HeaderImageStyle"  TargetType="ffimageloading:CachedImage">
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="Aspect" Value="Fill" />
+      </Style>
+
+      <Style x:Key="BlackHeaderLabelStyle"  TargetType="Label">
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+		    <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="#484848" />
+    	  <Setter Property="HeightRequest" Value="35" />
+		    <Setter Property="VerticalTextAlignment" Value="Center" />	
+        <Setter Property="Grid.Column" Value="0" />
+	    </Style>
+    	<Style x:Key="ViewAllButtonStyle"  TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <!--<Setter Property="HeightRequest" Value="35" />-->
+        <Setter Property="Grid.Column" Value="1" />
+        <Setter Property="BorderColor" Value="#f47421" />
+        <Setter Property="BackgroundColor" Value="#f47421" />
+        <Setter Property="FontAttributes" Value="Bold" />
+		<Setter Property="ClassId" Value="viewall" />
+        <Setter Property="VerticalOptions" Value="Center" />
+	    </Style>
+    </ResourceDictionary>
+  </t:MenuContainerPage.Resources>
+  <t:MenuContainerPage.Content>
+    <Grid BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+      <ScrollView >
+        <Grid  BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="4" Padding="4">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+          </Grid.RowDefinitions>
+          <Grid Grid.Row="0"   HorizontalOptions="Fill" ColumnSpacing="6"  RowSpacing="6" BackgroundColor="#ffffff">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Image Grid.Column="1" Grid.Row="0" Source="cM_Visits" Style="{StaticResource ModuleHeaderImageStyle}" >
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapCMVisitImage" NumberOfTapsRequired="1" />
+              </Image.GestureRecognizers>
+            </Image>
+            <GradientStackLayout:Gradient_Stack Grid.Column="1" Grid.Row="0" Style="{StaticResource HeaderLabelGradientStyle}" >
+              <Label x:Name="lblCMVISIT" Text="{x:Static labelTitle:AppResources.LCmVisits}" Style="{StaticResource HeaderLabel}" />
+            </GradientStackLayout:Gradient_Stack>
+
+            <Image Grid.Column="1" Grid.Row="1" Source="team_Maharashtra" Style="{StaticResource ModuleHeaderImageStyle}" >
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapTeamMaharashtraImage" NumberOfTapsRequired="1" />
+              </Image.GestureRecognizers>
+            </Image>
+            <GradientStackLayout:Gradient_Stack  Grid.Column="1" Grid.Row="1"  Style="{StaticResource HeaderLabelGradientStyle}" >
+              <Label x:Name="lblTEAMMAHARSHTRA" Text="{x:Static labelTitle:AppResources.LTeamMaharashtra}" Style="{StaticResource HeaderLabel}" />
+            </GradientStackLayout:Gradient_Stack>
+
+            <Image Grid.RowSpan="2" Grid.Column="0" Grid.Row="0" Source="the_Chief_Minister" Style="{StaticResource ModuleHeaderImageStyle}" >
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapChiefMinisterImage" NumberOfTapsRequired="1" />
+              </Image.GestureRecognizers>
+            </Image>
+            <GradientStackLayout:Gradient_Stack  Grid.RowSpan="2" Grid.Column="0" Grid.Row="0"  Style="{StaticResource HeaderLabelGradientStyle}" >
+              <Label x:Name="lblCHIEFMINISTER" Text="{x:Static labelTitle:AppResources.LTheChiefMinister}" Style="{StaticResource HeaderLabel}"  />
+            </GradientStackLayout:Gradient_Stack>
+
+            <Image Grid.Column="0" Grid.Row="2"  Source="initiatives" Style="{StaticResource ModuleHeaderImageStyle}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapInitiativesImage" NumberOfTapsRequired="1" />
+              </Image.GestureRecognizers>
+            </Image>
+            <GradientStackLayout:Gradient_Stack Grid.Column="0" Grid.Row="2" Style="{StaticResource HeaderLabelGradientStyle}" >
+              <Label x:Name="lblINITIATIVES" Text="{x:Static labelTitle:AppResources.LInitiatives}"  Style="{StaticResource HeaderLabel}"  />
+            </GradientStackLayout:Gradient_Stack>
+
+            <Image Grid.Column="1" Grid.Row="2" Source="join_Us" Style="{StaticResource ModuleHeaderImageStyle}">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapJoinUsImage" NumberOfTapsRequired="1" />
+              </Image.GestureRecognizers>
+            </Image>
+            <GradientStackLayout:Gradient_Stack Grid.Column="1" Grid.Row="2" Style="{StaticResource HeaderLabelGradientStyle}">
+              <Label x:Name="lblJOINUS" Text="{x:Static labelTitle:AppResources.LJoinUs}" Style="{StaticResource HeaderLabel}" />
+            </GradientStackLayout:Gradient_Stack>
+
+          </Grid>
+          <Grid Grid.Row="1" BackgroundColor="#ffffff">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lblNEWS" Text="{x:Static labelTitle:AppResources.LNewsUpdates}"  Style="{StaticResource BlackHeaderLabelStyle}"    />
+            <Button  x:Name="btnNEWS" Text="{x:Static labelTitle:AppResources.LViewAll}" Style="{StaticResource ViewAllButtonStyle}" Clicked="TapNewsUpdatesImage" />
+          </Grid>
+          <Grid Grid.Row="2" x:Name="NewsCarouselViewGrid"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+         <!--   <control:CarouselView BackgroundColor="#f7f7f7" x:Name="NewsCarouselView"   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemsSource="{Binding NewsList}" Position="{Binding Position, Mode=TwoWay}"> -->
+
+            <controls:CarouselViewControl x:Name="NewsCarouselView"
+                                      BackgroundColor="#f7f7f7" ItemsSource="{Binding NewsList}" Position="{Binding Position, Mode=TwoWay}"
+                                      HorizontalOptions="FillAndExpand"
+                                      VerticalOptions="FillAndExpand"
+                                      AnimateTransition="true"
+                                      IndicatorsShape="Circle"
+                                      InterPageSpacing="5"
+                                      InterPageSpacingColor="#f7f7f7"
+                                      IsSwipingEnabled="true"
+                                      Orientation="Horizontal"
+                                      ShowIndicators="false" 
+									  IndicatorsTintColor = "#C6C6C6"
+									  CurrentPageIndicatorTintColor= "#f47421"
+								     >
+			<controls:CarouselViewControl.ItemTemplate>
+				<DataTemplate>
+                  <Grid  BindingContext="{Binding }" HeightRequest="150"  HorizontalOptions="Fill" ColumnSpacing="7" >
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*"/>
+                      <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0"  Style="{StaticResource PlacholderHeaderImageStyle}"/>
+
+                    <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Column="0"  Source="{Binding thumb_img}" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="Fill"/>
+                    <StackLayout  Grid.Column="1"  VerticalOptions="CenterAndExpand">
+                      <local:ThreeLineLabel Text="{Binding title}"  TextColor="#484848"  FontAttributes="Bold" FontSize="{Binding SetFontSize}"/>
+                      <Label Text="{Binding date}"  TextColor="#484848"  FontSize="{Binding SetFontSizeSmall}" />
+                      <local:ThreeLineLabel Text="{Binding content}" VerticalOptions="Center"  TextColor="#484848"  FontSize="{Binding SetFontSizeSmall}" />
+                    </StackLayout>
+                    <Grid.GestureRecognizers>
+                      <TapGestureRecognizer Tapped="TapNewsUpdateItemGrid" NumberOfTapsRequired="1" />
+                    </Grid.GestureRecognizers>
+                  </Grid>
+                </DataTemplate>
+              </controls:CarouselViewControl.ItemTemplate>
+            </controls:CarouselViewControl>
+            <ActivityIndicator x:Name="loadingNewsList" IsRunning="True" IsEnabled="True" HorizontalOptions="Center" VerticalOptions="Center" Color="#f47421">
+              <ActivityIndicator.Scale>
+                <OnPlatform x:TypeArguments="x:Double" iOS="1.0" Android="0.5" />
+              </ActivityIndicator.Scale>
+            </ActivityIndicator>
+          </Grid>
+          <Grid Grid.Row="3" VerticalOptions="End" >
+            <local:CarouselIndicators   IndicatorHeight="10" IndicatorWidth="10"  VerticalOptions="End"  UnselectedIndicator="unselected_circle.png" SelectedIndicator="selected_circle.png" Position="{Binding Position}" ItemsSource="{Binding NewsList}" />
+          </Grid>
+          <Grid Grid.Row="4" BackgroundColor="#ffffff" >
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lblPHOTO" Text="{x:Static labelTitle:AppResources.LPhotoGallery}"  Style="{StaticResource BlackHeaderLabelStyle}"  />
+            <Button x:Name="btnPHOTO" Text="{x:Static labelTitle:AppResources.LViewAll}"  Style="{StaticResource ViewAllButtonStyle}" Clicked="TapPhotoGalleryImage" />
+          </Grid>
+          <Grid  HeightRequest="100"   Grid.Row="5"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <ScrollView Orientation="Horizontal" BackgroundColor="#f7f7f7">
+              <StackLayout Orientation="Horizontal">
+                <Grid Style="{StaticResource GalleryPhotosGridStyle}" >
+                  <Image Style="{StaticResource PlacholderHeaderImageStyle}"/>
+                  <ffimageloading:CachedImage DownsampleToViewSize="true"  x:Name="ImgPhoto1" Style="{StaticResource HeaderImageStyle}"/>
+                  <GradientStackLayout:Gradient_Stack Style="{StaticResource GalleryPhotosGradientStyle}">
+                    <Label  x:Name="LblPhoto1" Style="{StaticResource GalleryPhotosLabelStyle}"  />
+                  </GradientStackLayout:Gradient_Stack>
+                  <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGridPhoto1" NumberOfTapsRequired="1" />
+                  </Grid.GestureRecognizers>
+                </Grid>
+                <Grid Style="{StaticResource GalleryPhotosGridStyle}">
+                  <Image Style="{StaticResource PlacholderHeaderImageStyle}"/>
+                  <ffimageloading:CachedImage DownsampleToViewSize="true"  x:Name="ImgPhoto2" Style="{StaticResource HeaderImageStyle}"/>
+                  <GradientStackLayout:Gradient_Stack  Style="{StaticResource GalleryPhotosGradientStyle}">
+                    <Label  x:Name="LblPhoto2" Style="{StaticResource GalleryPhotosLabelStyle}"  />
+                  </GradientStackLayout:Gradient_Stack>
+                  <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGridPhoto2" NumberOfTapsRequired="1" />
+                  </Grid.GestureRecognizers>
+                </Grid>
+                <Grid Style="{StaticResource GalleryPhotosGridStyle}">
+                  <Image Style="{StaticResource PlacholderHeaderImageStyle}"/>
+                  <ffimageloading:CachedImage DownsampleToViewSize="true"  x:Name="ImgPhoto3" Style="{StaticResource HeaderImageStyle}"/>
+                  <GradientStackLayout:Gradient_Stack  Style="{StaticResource GalleryPhotosGradientStyle}">
+                    <Label  x:Name="LblPhoto3" Style="{StaticResource GalleryPhotosLabelStyle}"  />
+                  </GradientStackLayout:Gradient_Stack>
+                  <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGridPhoto3" NumberOfTapsRequired="1" />
+                  </Grid.GestureRecognizers>
+                </Grid>
+                <Grid Style="{StaticResource GalleryPhotosGridStyle}">
+                  <Image Style="{StaticResource PlacholderHeaderImageStyle}"/>
+                  <ffimageloading:CachedImage DownsampleToViewSize="true"   x:Name="ImgPhoto4" Style="{StaticResource HeaderImageStyle}"/>
+                  <GradientStackLayout:Gradient_Stack  Style="{StaticResource GalleryPhotosGradientStyle}">
+                    <Label x:Name="LblPhoto4" Style="{StaticResource GalleryPhotosLabelStyle}"  />
+                  </GradientStackLayout:Gradient_Stack>
+                  <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGridPhoto4" NumberOfTapsRequired="1" />
+                  </Grid.GestureRecognizers>
+                </Grid>
+                <Grid Style="{StaticResource GalleryPhotosGridStyle}">
+                  <Image Style="{StaticResource PlacholderHeaderImageStyle}"/>
+                  <ffimageloading:CachedImage DownsampleToViewSize="true"   x:Name="ImgPhoto5" Style="{StaticResource HeaderImageStyle}"/>
+                  <GradientStackLayout:Gradient_Stack  Style="{StaticResource GalleryPhotosGradientStyle}">
+                    <Label x:Name="LblPhoto5" Style="{StaticResource GalleryPhotosLabelStyle}"  />
+                  </GradientStackLayout:Gradient_Stack>
+                  <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGridPhoto5" NumberOfTapsRequired="1" />
+                  </Grid.GestureRecognizers>
+                </Grid>
+              </StackLayout>
+
+            </ScrollView>
+            <ActivityIndicator x:Name="loadingPhotosList" IsRunning="True" IsEnabled="True" HorizontalOptions="Center" VerticalOptions="Center" Color="#f47421">
+              <ActivityIndicator.Scale>
+                <OnPlatform x:TypeArguments="x:Double" iOS="1.0" Android="0.5" />
+              </ActivityIndicator.Scale>
+            </ActivityIndicator>
+          </Grid>
+          <Grid Grid.Row="6" BackgroundColor="#ffffff" >
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lblVIDEO" Text="{x:Static labelTitle:AppResources.LVideoGallery}" Style="{StaticResource BlackHeaderLabelStyle}"   />
+            <Button x:Name="btnVIDEO" Text="{x:Static labelTitle:AppResources.LViewAll}" Style="{StaticResource ViewAllButtonStyle}"  Clicked="TapVideoGalleryImage"  />
+          </Grid>
+          <Grid  HeightRequest="100"   Grid.Row="7"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <ScrollView Orientation="Horizontal" BackgroundColor="#f7f7f7">
+              <StackLayout Orientation="Horizontal">
+                <Grid Style="{StaticResource GalleryPhotosGridStyle}">
+                  <Image Style="{StaticResource PlacholderHeaderImageStyle}"/>
+                  <ffimageloading:CachedImage DownsampleToViewSize="true"   x:Name="ImgVideo1" Style="{StaticResource HeaderImageStyle}"/>
+                  <GradientStackLayout:Gradient_Stack Style="{StaticResource GalleryPhotosGradientStyle}">
+                    <Label  x:Name="LblVideo1" Style="{StaticResource GalleryPhotosLabelStyle}"  />
+                  </GradientStackLayout:Gradient_Stack>
+                  <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGridVideo1" NumberOfTapsRequired="1" />
+                  </Grid.GestureRecognizers>
+                </Grid>
+                <Grid Style="{StaticResource GalleryPhotosGridStyle}">
+                  <Image Style="{StaticResource PlacholderHeaderImageStyle}"/>
+                  <ffimageloading:CachedImage DownsampleToViewSize="true"   x:Name="ImgVideo2" Style="{StaticResource HeaderImageStyle}"/>
+                  <GradientStackLayout:Gradient_Stack Style="{StaticResource GalleryPhotosGradientStyle}">
+                    <Label  x:Name="LblVideo2"  Style="{StaticResource GalleryPhotosLabelStyle}"  />
+                  </GradientStackLayout:Gradient_Stack>
+                  <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGridVideo2" NumberOfTapsRequired="1" />
+                  </Grid.GestureRecognizers>
+                </Grid>
+                <Grid Style="{StaticResource GalleryPhotosGridStyle}">
+                  <Image Style="{StaticResource PlacholderHeaderImageStyle}"/>
+                  <ffimageloading:CachedImage DownsampleToViewSize="true"   x:Name="ImgVideo3" Style="{StaticResource HeaderImageStyle}"/>
+                  <GradientStackLayout:Gradient_Stack Style="{StaticResource GalleryPhotosGradientStyle}">
+                    <Label  x:Name="LblVideo3" Style="{StaticResource GalleryPhotosLabelStyle}"  />
+                  </GradientStackLayout:Gradient_Stack>
+                  <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGridVideo3" NumberOfTapsRequired="1" />
+                  </Grid.GestureRecognizers>
+                </Grid>
+                <Grid Style="{StaticResource GalleryPhotosGridStyle}">
+                  <Image Style="{StaticResource PlacholderHeaderImageStyle}"/>
+                  <ffimageloading:CachedImage DownsampleToViewSize="true"   x:Name="ImgVideo4" Style="{StaticResource HeaderImageStyle}"/>
+                  <GradientStackLayout:Gradient_Stack  Style="{StaticResource GalleryPhotosGradientStyle}">
+                    <Label  x:Name="LblVideo4"  Style="{StaticResource GalleryPhotosLabelStyle}"  />
+                  </GradientStackLayout:Gradient_Stack>
+                  <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGridVideo4" NumberOfTapsRequired="1" />
+                  </Grid.GestureRecognizers>
+                </Grid>
+                <Grid Style="{StaticResource GalleryPhotosGridStyle}">
+                  <Image Style="{StaticResource PlacholderHeaderImageStyle}"/>
+                  <ffimageloading:CachedImage DownsampleToViewSize="true"   x:Name="ImgVideo5" Style="{StaticResource HeaderImageStyle}"/>
+                  <GradientStackLayout:Gradient_Stack  Style="{StaticResource GalleryPhotosGradientStyle}">
+                    <Label  x:Name="LblVideo5"  Style="{StaticResource GalleryPhotosLabelStyle}"  />
+                  </GradientStackLayout:Gradient_Stack>
+                  <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGridVideo5" NumberOfTapsRequired="1" />
+                  </Grid.GestureRecognizers>
+                </Grid>
+              </StackLayout>
+            </ScrollView>
+            <ActivityIndicator x:Name="loadingVideosList" IsRunning="True" IsEnabled="True" HorizontalOptions="Center" VerticalOptions="Center" Color="#f47421">
+              <ActivityIndicator.Scale>
+                <OnPlatform x:TypeArguments="x:Double" iOS="1.0" Android="0.5" />
+              </ActivityIndicator.Scale>
+            </ActivityIndicator>
+          </Grid>
+        </Grid>
+      </ScrollView>
+      <!--<ActivityIndicator x:Name="Mainloading" IsRunning="True"
+     HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Color="#f47421">
+        <ActivityIndicator.Scale>
+          <OnPlatform x:TypeArguments="x:Double" iOS="2.0" Android="1.0" />
+        </ActivityIndicator.Scale>
+      </ActivityIndicator>-->
+
+    </Grid>
+  </t:MenuContainerPage.Content>
+   <!--<t:MenuContainerPage.ToolbarItems>
+     <ToolbarItem x:Name="bottomup" Text="GOM APPS" Order="Primary" Priority="1" />
+   </t:MenuContainerPage.ToolbarItems>-->
+</t:MenuContainerPage>
