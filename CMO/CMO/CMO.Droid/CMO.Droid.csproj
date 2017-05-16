@@ -281,7 +281,6 @@
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\Tabbar.axml" />
     <AndroidResource Include="Resources\Layout\Toolbar.axml" />
-    <AndroidResource Include="Resources\drawable-hdpi\.DS_Store" />
     <None Include="Resources\Splash.axml">
       <SubType>AndroidResource</SubType>
     </None>
