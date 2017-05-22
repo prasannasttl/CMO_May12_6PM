@@ -320,13 +320,7 @@
     <ImageAsset Include="Resources\Media.xcassets\selected_circle.imageset\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\selected_circle.imageset\selected_circle.png">
-      <InProject>false</InProject>
-    </ImageAsset>
     <ImageAsset Include="Resources\Media.xcassets\unselected_circle.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\unselected_circle.imageset\unselected_circle.png">
       <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Media.xcassets\initiatives_next.imageset\Contents.json">
