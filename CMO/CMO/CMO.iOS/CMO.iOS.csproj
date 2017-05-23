@@ -724,15 +724,6 @@
     <ImageAsset Include="Resources\Media.xcassets\team_Maharashtra.imageset\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\team_Maharashtra.imageset\team_maha%402x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\team_Maharashtra.imageset\team_maha%403x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\team_Maharashtra.imageset\team_maharashtra.png">
-      <InProject>false</InProject>
-    </ImageAsset>
     <ImageAsset Include="Resources\Media.xcassets\initiatives.imageset\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
