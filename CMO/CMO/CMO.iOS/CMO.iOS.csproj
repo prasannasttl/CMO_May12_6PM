@@ -718,9 +718,6 @@
     <ImageAsset Include="Resources\Media.xcassets\the_chief_minister_next.imageset\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\cm_visit_next.imageset\banner%403x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
     <ImageAsset Include="Resources\Media.xcassets\cm_visit_next.imageset\cm_pic.png">
       <InProject>false</InProject>
     </ImageAsset>
