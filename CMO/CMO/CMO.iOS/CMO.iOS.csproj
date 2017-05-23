@@ -730,15 +730,6 @@
     <ImageAsset Include="Resources\Media.xcassets\the_Chief_Minister.imageset\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\cM_Visits.imageset\cm_visit.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\cM_Visits.imageset\cm_visit%402x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\cM_Visits.imageset\cm_visit%403x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
     <ImageAsset Include="Resources\Media.xcassets\cM_Visits.imageset\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
