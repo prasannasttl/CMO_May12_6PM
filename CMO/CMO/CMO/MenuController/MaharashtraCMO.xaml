@@ -48,13 +48,13 @@
       </Grid.RowDefinitions>
       <Grid Grid.Row="0"  BackgroundColor="#ffffff">
 
-        <Image Source="home_banner_V1.png" HorizontalOptions="FillAndExpand"
+        <Image AutomationId="Ahome_banner_V1" Source="home_banner_V1.png" HorizontalOptions="FillAndExpand"
                               VerticalOptions="FillAndExpand" Aspect="Fill"   />
         <StackLayout HorizontalOptions="End" VerticalOptions="End" BackgroundColor="Transparent" >
           <StackLayout.Padding>
             <OnIdiom x:TypeArguments="Thickness" Tablet="0,0,20,45" Phone="0,0,10,10" />
           </StackLayout.Padding>
-                    <Button x:Name="BannerButton" Text="{x:Static labelTitle:AppResources.LChiefMinisterOffice}"  TextColor="White" BorderWidth="0"
+                    <Button AutomationId="ABannerButton" x:Name="BannerButton" Text="{x:Static labelTitle:AppResources.LChiefMinisterOffice}"  TextColor="White" BorderWidth="0"
            BackgroundColor="#141B3D" HorizontalOptions="End" VerticalOptions="End" Clicked="CMOfficeTap" />
                 </StackLayout>
       </Grid>
@@ -67,7 +67,7 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" x:Name="DraggerGrid" VerticalOptions="Center" Padding="0,10,0,10"
               HorizontalOptions="Fill" BackgroundColor="#eeeeee">
-          <Label  x:Name="MahaGov" Text="{x:Static labelTitle:AppResources.LMaharashtraGovernmentApps}"
+          <Label AutomationId="AMahaGovAppsLabel"  x:Name="MahaGov" Text="{x:Static labelTitle:AppResources.LMaharashtraGovernmentApps}"
                   VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
                   HorizontalTextAlignment="Center" TextColor="#484848"
                   VerticalTextAlignment="Center"  FontAttributes="Bold"/>
@@ -78,7 +78,7 @@
                                 VerticalOptions="FillAndExpand"
                                 ItemsSource="{Binding MoreAppsList}"
                                 Position="{Binding Position, Mode=TwoWay}">-->
-            <controls:CarouselViewControl x:Name="NewsCarouselView"
+            <controls:CarouselViewControl AutomationId="ANewsCarouselView" x:Name="NewsCarouselView"
 									  ItemsSource="{Binding MoreAppsList}"
                                 	  Position="{Binding Position, Mode=TwoWay}"
                                       HorizontalOptions="FillAndExpand"
@@ -105,74 +105,74 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                   </Grid.RowDefinitions>
-                  <Grid Grid.Row="0" Grid.Column="0" Padding="0,10,0,0" BindingContext="{Binding }" >
+                  <Grid AutomationId="AItm1_Grid" Grid.Row="0" Grid.Column="0" Padding="0,10,0,0" BindingContext="{Binding }" >
                     <Grid.RowDefinitions>
                       <RowDefinition Height="*"/>
                       <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <ffimageloading:CachedImage DownsampleToViewSize="true"  Source="{Binding Itm1_Icon}" Style="{StaticResource AppIcon}"/>
-                    <Image  Style="{StaticResource TickMarkIcon}" Margin="{Binding TickMarkMargin}" IsVisible="{Binding Itm1_AppStatus, Converter={StaticResource TickMarkIconVisibilityConverter}}"  />
-                    <Label Text="{Binding Itm1_Name}" Style="{StaticResource AppLabel}"/>
+                    <ffimageloading:CachedImage AutomationId="AItm1_Icon" Source="{Binding Itm1_Icon}" Style="{StaticResource AppIcon}"/>
+                    <Image AutomationId="AItm1_TickMarkIcon" Style="{StaticResource TickMarkIcon}" Margin="{Binding TickMarkMargin}" IsVisible="{Binding Itm1_AppStatus, Converter={StaticResource TickMarkIconVisibilityConverter}}"  />
+                    <Label AutomationId="AItm1_Name" Text="{Binding Itm1_Name}" Style="{StaticResource AppLabel}"/>
                     <Grid.GestureRecognizers>
                       <TapGestureRecognizer Tapped="App1Tap" />
                     </Grid.GestureRecognizers>
                   </Grid>
-                  <Grid Grid.Row="0" Grid.Column="1" Padding="0,10,0,0">
+                  <Grid AutomationId="AItm2_Grid" Grid.Row="0" Grid.Column="1" Padding="0,10,0,0">
                     <Grid.RowDefinitions>
                       <RowDefinition Height="*"/>
                       <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <ffimageloading:CachedImage DownsampleToViewSize="true"  Source="{Binding Itm2_Icon}" Style="{StaticResource AppIcon}"/>
-                    <Image  Style="{StaticResource TickMarkIcon}" Margin="{Binding TickMarkMargin}" IsVisible="{Binding Itm2_AppStatus, Converter={StaticResource TickMarkIconVisibilityConverter}}"  />
-                    <Label Text="{Binding Itm2_Name}" Style="{StaticResource AppLabel}"/>
+                    <ffimageloading:CachedImage AutomationId="AItm2_Icon" Source="{Binding Itm2_Icon}" Style="{StaticResource AppIcon}"/>
+                    <Image AutomationId="AItm2_TickMarkIcon" Style="{StaticResource TickMarkIcon}" Margin="{Binding TickMarkMargin}" IsVisible="{Binding Itm2_AppStatus, Converter={StaticResource TickMarkIconVisibilityConverter}}"  />
+                    <Label AutomationId="AItm2_Name" Text="{Binding Itm2_Name}" Style="{StaticResource AppLabel}"/>
                     <Grid.GestureRecognizers>
                       <TapGestureRecognizer Tapped="App2Tap" />
                     </Grid.GestureRecognizers>
                   </Grid>
-                  <Grid Grid.Row="0" Grid.Column="2" Padding="0,10,0,0">
+                  <Grid AutomationId="AItm3_Grid" Grid.Row="0" Grid.Column="2" Padding="0,10,0,0">
                     <Grid.RowDefinitions>
                       <RowDefinition Height="*"/>
                       <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <ffimageloading:CachedImage DownsampleToViewSize="true"  Source="{Binding Itm3_Icon}" Style="{StaticResource AppIcon}"/>
-                    <Image  Style="{StaticResource TickMarkIcon}" Margin="{Binding TickMarkMargin}" IsVisible="{Binding Itm3_AppStatus, Converter={StaticResource TickMarkIconVisibilityConverter}}"  />
-                    <Label Text="{Binding Itm3_Name}" Style="{StaticResource AppLabel}"/>
+                    <ffimageloading:CachedImage AutomationId="AItm3_Icon" Source="{Binding Itm3_Icon}" Style="{StaticResource AppIcon}"/>
+                    <Image AutomationId="AItm3_TickMarkIcon" Style="{StaticResource TickMarkIcon}" Margin="{Binding TickMarkMargin}" IsVisible="{Binding Itm3_AppStatus, Converter={StaticResource TickMarkIconVisibilityConverter}}"  />
+                    <Label AutomationId="AItm3_Name" Text="{Binding Itm3_Name}" Style="{StaticResource AppLabel}"/>
                     <Grid.GestureRecognizers>
                       <TapGestureRecognizer Tapped="App3Tap" />
                     </Grid.GestureRecognizers>
                   </Grid>
-                  <Grid Grid.Row="1" Grid.Column="0">
+                  <Grid AutomationId="AItm4_Grid" Grid.Row="1" Grid.Column="0">
                     <Grid.RowDefinitions>
                       <RowDefinition Height="*"/>
                       <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <ffimageloading:CachedImage DownsampleToViewSize="true"  Source="{Binding Itm4_Icon}" Style="{StaticResource AppIcon}"/>
-                    <Image  Style="{StaticResource TickMarkIcon}" Margin="{Binding TickMarkMargin}" IsVisible="{Binding Itm4_AppStatus, Converter={StaticResource TickMarkIconVisibilityConverter}}"  />
-                    <Label Text="{Binding Itm4_Name}" Style="{StaticResource AppLabel}"/>
+                    <ffimageloading:CachedImage AutomationId="AItm4_Icon" Source="{Binding Itm4_Icon}" Style="{StaticResource AppIcon}"/>
+                    <Image AutomationId="AItm4_TickMarkIcon" Style="{StaticResource TickMarkIcon}" Margin="{Binding TickMarkMargin}" IsVisible="{Binding Itm4_AppStatus, Converter={StaticResource TickMarkIconVisibilityConverter}}"  />
+                    <Label AutomationId="AItm4_Name" Text="{Binding Itm4_Name}" Style="{StaticResource AppLabel}"/>
                     <Grid.GestureRecognizers>
                       <TapGestureRecognizer Tapped="App4Tap" />
                     </Grid.GestureRecognizers>
                   </Grid>
-                  <Grid Grid.Row="1" Grid.Column="1">
+                  <Grid AutomationId="AItm5_Grid" Grid.Row="1" Grid.Column="1">
                     <Grid.RowDefinitions>
                       <RowDefinition Height="*"/>
                       <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <ffimageloading:CachedImage DownsampleToViewSize="true"  Source="{Binding Itm5_Icon}" Style="{StaticResource AppIcon}"/>
-                    <Image  Style="{StaticResource TickMarkIcon}" Margin="{Binding TickMarkMargin}" IsVisible="{Binding Itm5_AppStatus, Converter={StaticResource TickMarkIconVisibilityConverter}}"  />
-                    <Label Text="{Binding Itm5_Name}" Style="{StaticResource AppLabel}"/>
+                    <ffimageloading:CachedImage AutomationId="AItm5_Icon" Source="{Binding Itm5_Icon}" Style="{StaticResource AppIcon}"/>
+                    <Image AutomationId="AItm5_TickMarkIcon" Style="{StaticResource TickMarkIcon}" Margin="{Binding TickMarkMargin}" IsVisible="{Binding Itm5_AppStatus, Converter={StaticResource TickMarkIconVisibilityConverter}}"  />
+                    <Label AutomationId="AItm5_Name" Text="{Binding Itm5_Name}" Style="{StaticResource AppLabel}"/>
                     <Grid.GestureRecognizers>
                       <TapGestureRecognizer Tapped="App5Tap" />
                     </Grid.GestureRecognizers>
                   </Grid>
-                  <Grid Grid.Row="1" Grid.Column="2">
+                  <Grid AutomationId="AItm6_Grid" Grid.Row="1" Grid.Column="2">
                     <Grid.RowDefinitions>
                       <RowDefinition Height="*"/>
                       <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <ffimageloading:CachedImage DownsampleToViewSize="true"  Source="{Binding Itm6_Icon}" Style="{StaticResource AppIcon}"/>
-                    <Image  Style="{StaticResource TickMarkIcon}" Margin="{Binding TickMarkMargin}" IsVisible="{Binding Itm6_AppStatus, Converter={StaticResource TickMarkIconVisibilityConverter}}"  />
-                    <Label Text="{Binding Itm6_Name}" Style="{StaticResource AppLabel}"/>
+                    <ffimageloading:CachedImage AutomationId="AItm6_Icon" Source="{Binding Itm6_Icon}" Style="{StaticResource AppIcon}"/>
+                    <Image AutomationId="AItm6_TickMarkIcon" Style="{StaticResource TickMarkIcon}" Margin="{Binding TickMarkMargin}" IsVisible="{Binding Itm6_AppStatus, Converter={StaticResource TickMarkIconVisibilityConverter}}"  />
+                    <Label AutomationId="AItm6_Name" Text="{Binding Itm6_Name}" Style="{StaticResource AppLabel}"/>
                     <Grid.GestureRecognizers>
                       <TapGestureRecognizer Tapped="App6Tap" />
                     </Grid.GestureRecognizers>
@@ -182,8 +182,8 @@
             </controls:CarouselViewControl.ItemTemplate>
           </controls:CarouselViewControl>
         </Grid>
-        <Grid Grid.Row="2" VerticalOptions="End" Padding="0,0,0,15" BackgroundColor="#eeeeee">
-          <local:CarouselIndicators   IndicatorHeight="15" IndicatorWidth="15"  VerticalOptions="End"  UnselectedIndicator="unselected_circle.png" SelectedIndicator="selected_circle.png" Position="{Binding Position}" ItemsSource="{Binding MoreAppsList}" />
+        <Grid AutomationId="AGridCarouselIndicator" Grid.Row="2" VerticalOptions="End" Padding="0,0,0,15" BackgroundColor="#eeeeee">
+          <local:CarouselIndicators AutomationId="ACarouselIndicatorDot"  IndicatorHeight="15" IndicatorWidth="15"  VerticalOptions="End"  UnselectedIndicator="unselected_circle.png" SelectedIndicator="selected_circle.png" Position="{Binding Position}" ItemsSource="{Binding MoreAppsList}" />
         </Grid> 
       </Grid>
     </Grid>
@@ -191,12 +191,12 @@
 </ContentPage>
 
 <!--
-  <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Row="0" Grid.Column="0" Source="{Binding Itm1_Icon}" Style="{StaticResource AppIcon}"/>
-  <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Row="0" Grid.Column="1" Source="{Binding Itm2_Icon}" Style="{StaticResource AppIcon}"/>
-  <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Row="0" Grid.Column="2" Source="{Binding Itm3_Icon}" Style="{StaticResource AppIcon}"/>
-  <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Row="2" Grid.Column="0" Source="{Binding Itm4_Icon}" Style="{StaticResource AppIcon}"/>
-  <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Row="2" Grid.Column="1" Source="{Binding Itm5_Icon}" Style="{StaticResource AppIcon}"/>
-  <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Row="2" Grid.Column="2" Source="{Binding Itm6_Icon}" Style="{StaticResource AppIcon}"/>
+  <ffimageloading:CachedImage Grid.Row="0" Grid.Column="0" Source="{Binding Itm1_Icon}" Style="{StaticResource AppIcon}"/>
+  <ffimageloading:CachedImage Grid.Row="0" Grid.Column="1" Source="{Binding Itm2_Icon}" Style="{StaticResource AppIcon}"/>
+  <ffimageloading:CachedImage Grid.Row="0" Grid.Column="2" Source="{Binding Itm3_Icon}" Style="{StaticResource AppIcon}"/>
+  <ffimageloading:CachedImage Grid.Row="2" Grid.Column="0" Source="{Binding Itm4_Icon}" Style="{StaticResource AppIcon}"/>
+  <ffimageloading:CachedImage Grid.Row="2" Grid.Column="1" Source="{Binding Itm5_Icon}" Style="{StaticResource AppIcon}"/>
+  <ffimageloading:CachedImage Grid.Row="2" Grid.Column="2" Source="{Binding Itm6_Icon}" Style="{StaticResource AppIcon}"/>
   <Label Grid.Row="1" Grid.Column="0" Text="{Binding Itm1_Name}" Style="{StaticResource AppLabel}"/>
   <Label Grid.Row="1" Grid.Column="1" Text="{Binding Itm2_Name}" Style="{StaticResource AppLabel}"/>
   <Label Grid.Row="1" Grid.Column="2" Text="{Binding Itm3_Name}" Style="{StaticResource AppLabel}"/>
