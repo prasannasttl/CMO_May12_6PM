@@ -23,7 +23,7 @@ namespace CMO_UITest
             if (platform == Platform.Android)
             {
                 return ConfigureApp
-                .Android
+					.Android.EnableLocalScreenshots()
                 .StartApp();
             }
             return ConfigureApp

@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.IO;
 using System.Linq;
 using NUnit.Framework;
@@ -8,7 +8,7 @@ using Xamarin.UITest.Queries;
 namespace CMO_UITest
 {
     [TestFixture(Platform.Android)]
-    //[TestFixture(Platform.iOS)]
+    [TestFixture(Platform.iOS)]
     public class Tests
     {
         IApp app;
@@ -32,3 +32,4 @@ namespace CMO_UITest
         }
     }
 }
+*/

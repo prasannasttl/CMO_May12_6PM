@@ -1,11 +1,11 @@
-﻿using System;
+﻿/*using System;
 using NUnit.Framework;
 using Xamarin.UITest;
 
 namespace CMO_UITest
 {
 	[TestFixture(Xamarin.UITest.Platform.Android)]
-	//[TestFixture(Platform.iOS)]
+	[TestFixture(Platform.iOS)]
 	public class CallRepl
     {
 		IApp app;
@@ -14,21 +14,16 @@ namespace CMO_UITest
 		{
 			this.platform = platform;
 		}
-		[SetUp][Ignore]
+		[SetUp]
         public void BeforeEachTest()
         {
             app = AppInitializer.StartApp(platform);
         }
 
-		[Test][Ignore]
+		[Test]
         public void DisplayScreenHierarchy()
         {
             app.Repl();
         }
-		/*[Test]
-		public void FirstPage()
-		{
-			var MahaAppsPage = new CMO_UITest.MainModule.MahaCMOAppsPageTest(app);
-		}*/
     }
-}
+}*/
