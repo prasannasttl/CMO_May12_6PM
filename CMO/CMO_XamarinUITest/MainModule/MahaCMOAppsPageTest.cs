@@ -38,7 +38,7 @@ namespace CMO_UITest.MainModule
 			app.WaitForElement(c => c.Marked("AMahaGovAppsLabel").Text("MAHARASHTRA GOVERNMENT APPS"));
 			app.Tap(c => c.Button("ABannerButton").Text("  CHIEF MINISTER OFFICE >  "));
 			System.Threading.Thread.Sleep(4000);
-			app.Screenshot("On CM Office Button Tap");
+			app.Screenshot("On CM Office Button Tap.");
 			app.Back();
 		}
 
