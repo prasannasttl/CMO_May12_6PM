@@ -13,7 +13,7 @@ namespace CMO_UITest
         //const string apkPath = "AutoGas_29_12_2015.apk";
         const string apkPath = "CMOTest.apk";
         //const string appFile = "../../../XamarinCRM.iOS/bin/iPhoneSimulator/Debug/XamarinCRMiOS.app";
-        const string appFile = "CMOTest.ios.ipa";
+        const string appFile = "com.cmo.ios.ipa";
         //const string bundleId = "com.xamarin.xamarinautogas"
         const string bundleId = "com.MahaCMO";
 
