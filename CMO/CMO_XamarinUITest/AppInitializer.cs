@@ -16,7 +16,7 @@ namespace CMO_UITest
         const string appFile = "com.cmo.ios.ipa";
         //const string bundleId = "com.xamarin.xamarinautogas"
         //const string bundleId = "com.MahaCMO";
-		const string bundleId = "com.STTLEnterprise.cmo";
+		const string bundleId = "com.STTLEnterprice.cmo";
 
 		public static IApp StartApp(Platform platform)
 		{
