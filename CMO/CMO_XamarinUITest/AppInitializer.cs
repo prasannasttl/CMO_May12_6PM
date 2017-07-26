@@ -30,7 +30,7 @@ namespace CMO_UITest
 			return ConfigureApp
 				.iOS
 				.EnableLocalScreenshots()
-				.InstalledApp(bundleId)
+				
 				.StartApp();
 
 		}
