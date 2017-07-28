@@ -5,7 +5,7 @@ using Xamarin.UITest;
 namespace CMO_UITest.MainModule
 {
 	//[TestFixture(Xamarin.UITest.Platform.Android)]
-	[TestFixture(Platform.iOS)]
+	[TestFixture(Xamarin.UITest.Platform.iOS)]
 	public class MahaCMOAppsPageTest
 	{
 		IApp app;
