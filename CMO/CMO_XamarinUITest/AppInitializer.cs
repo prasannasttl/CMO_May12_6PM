@@ -27,10 +27,10 @@ namespace CMO_UITest
 					.EnableLocalScreenshots()
 					.StartApp();
 			}
-			return ConfigureApp
-				.iOS
-				.EnableLocalScreenshots()
-				
+            return ConfigureApp
+                .iOS
+                .EnableLocalScreenshots()
+                .InstalledApp(bundleId)
 				.StartApp();
 
 		}
