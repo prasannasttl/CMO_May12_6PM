@@ -58,6 +58,8 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="com.cmo.ios.ipa">
+    </None>
+    <None Include="com.MahaCMO.apk">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

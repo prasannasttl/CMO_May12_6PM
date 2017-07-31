@@ -4,8 +4,8 @@ using Xamarin.UITest;
 
 namespace CMO_UITest
 {
-	//[TestFixture(Xamarin.UITest.Platform.Android)]
-	[TestFixture(Xamarin.UITest.Platform.iOS)]
+	[TestFixture(Xamarin.UITest.Platform.Android)]
+	//[TestFixture(Xamarin.UITest.Platform.iOS)]
 	public class HomeScreenPage
 	{
 		IApp app;
@@ -24,6 +24,7 @@ namespace CMO_UITest
 		[Test]
 		public void Test5_NavigateToHomeScreen()
 		{
+			app.Repl();
 			app.Tap(c => c.Button("ABannerButton").Text("  CHIEF MINISTER OFFICE >  "));
 			app.WaitForElement(c=> c.Text("HOME"));
 

@@ -41,9 +41,9 @@
     <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
     <AndroidKeyStore>True</AndroidKeyStore>
     <AndroidSigningStorePass>123456</AndroidSigningStorePass>
-    <AndroidSigningKeyAlias>Shantanu_test</AndroidSigningKeyAlias>
+    <AndroidSigningKeyAlias>Cmo_Keystore</AndroidSigningKeyAlias>
     <AndroidSigningKeyPass>123456</AndroidSigningKeyPass>
-    <AndroidSigningKeyStore>C:\Users\shantanu.manik\AppData\Local\Xamarin\Mono for Android\Keystore\Shantanu_test\Shantanu_test.keystore</AndroidSigningKeyStore>
+    <AndroidSigningKeyStore>C:\Users\shantanu.manik\AppData\Local\Xamarin\Mono for Android\Keystore\Cmo_Keystore\Cmo_Keystore.keystore</AndroidSigningKeyStore>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
