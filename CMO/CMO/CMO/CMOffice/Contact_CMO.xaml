@@ -93,7 +93,7 @@
                   </Grid.ColumnDefinitions>
                   <Image   Source="icon_name.png"   Style="{StaticResource EntryImageStyle}" />
                   <Grid   Style="{StaticResource SeparatorVerticalLineStyle}"/>
-                  <Entry  Placeholder="{x:Static local:AppResources.LContactName}"
+                  <Entry AutomationId="txt_name"  Placeholder="{x:Static local:AppResources.LContactName}"
                           x:Name="txtName"   ClassId="50" 
                           Style="{StaticResource EntryStyle}"/>
                 </Grid>
@@ -110,7 +110,7 @@
                   </Grid.ColumnDefinitions>
                   <Image  Source="icon_email.png"  Style="{StaticResource EntryImageStyle}"/>
                     <Grid   Style="{StaticResource SeparatorVerticalLineStyle}"/>
-                    <Entry Placeholder="{x:Static local:AppResources.LContactEmail}"
+                    <Entry AutomationId="txt_Email" Placeholder="{x:Static local:AppResources.LContactEmail}"
                            x:Name="txtEmail"  ClassId="50"  Keyboard="Email"
                            Style="{StaticResource EntryStyle}"/>
                 </Grid>
@@ -127,7 +127,7 @@
                   </Grid.ColumnDefinitions>
                   <Image  Source="icon_mobno.png"  Style="{StaticResource EntryImageStyle}"/>
                   <Grid   Style="{StaticResource SeparatorVerticalLineStyle}"/>          
-                  <Entry   Placeholder="{x:Static local:AppResources.LContactMobileNumber}"
+                  <Entry AutomationId="txt_mobile"  Placeholder="{x:Static local:AppResources.LContactMobileNumber}"
                            x:Name="txtMobile" Keyboard="Telephone" ClassId="15" 
                            Style="{StaticResource EntryStyle}"/>
                 </Grid>
@@ -144,7 +144,7 @@
                   </Grid.ColumnDefinitions>
                   <Image  Source="icon_subject.png"  Style="{StaticResource EntryImageStyle}"/>   
                  <Grid Style="{StaticResource SeparatorVerticalLineStyle}"/>    
-                    <Entry Placeholder="{x:Static local:AppResources.LSubject}"
+                    <Entry AutomationId="txt_subject" Placeholder="{x:Static local:AppResources.LSubject}"
                            x:Name="txtSubject"   ClassId="100"
                            Style="{StaticResource EntryStyle}" />
                 </Grid>
