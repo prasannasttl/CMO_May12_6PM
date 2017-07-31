@@ -58,11 +58,11 @@
     <DebugSymbols>True</DebugSymbols>
     <AndroidCreatePackagePerAbi>True</AndroidCreatePackagePerAbi>
     <AndroidKeyStore>True</AndroidKeyStore>
-    <AndroidSigningKeyStore>C:\Users\Urja.patel\AppData\Local\Xamarin\Mono for Android\Keystore\MyAndroidKey\MyAndroidKey.keystore</AndroidSigningKeyStore>
-    <AndroidSigningKeyAlias>MyAndroidKey</AndroidSigningKeyAlias>
-    <AndroidSigningKeyPass>silver@123</AndroidSigningKeyPass>
+    <AndroidSigningKeyStore>C:\Users\shantanu.manik\AppData\Local\Xamarin\Mono for Android\Keystore\Cmo_Keystore\Cmo_Keystore.keystore</AndroidSigningKeyStore>
+    <AndroidSigningKeyAlias>Cmo_Keystore</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>123456</AndroidSigningKeyPass>
     <AndroidSupportedAbis>armeabi;armeabi-v7a;x86</AndroidSupportedAbis>
-    <AndroidSigningStorePass>silver@123</AndroidSigningStorePass>
+    <AndroidSigningStorePass>123456</AndroidSigningStorePass>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CarouselView.FormsPlugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">

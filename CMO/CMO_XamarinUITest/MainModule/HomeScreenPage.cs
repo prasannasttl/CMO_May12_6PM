@@ -19,7 +19,8 @@ namespace CMO_UITest
 		[SetUp]
 		public void BeforeEachTest()
 		{
-			app = AppInitializer.StartApp(platform);		}
+			app = AppInitializer.StartApp(platform);
+		}
 
 		[Test]
 		public void Test5_NavigateToHomeScreen()
