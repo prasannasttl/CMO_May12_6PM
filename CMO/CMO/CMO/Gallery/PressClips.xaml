@@ -8,126 +8,126 @@
 	           xmlns:labelLocal="clr-namespace:CMO.Gallery;assembly=CMO"
 		         xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:labeltwoline="clr-namespace:CMO.Gallery;assembly=CMO"  >
-  <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="0">
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="0">
 
-    <Grid.RowDefinitions>
-      <RowDefinition Height="Auto" />
-      <RowDefinition Height="Auto" />
-      <RowDefinition Height="*" />
-    </Grid.RowDefinitions>
-    <StackLayout Grid.Row="0" VerticalOptions="Center" Padding="5"  BackgroundColor="#F7F7F7">
-      <Grid BackgroundColor="White" VerticalOptions="Center">
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="*"/>
-          <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
-        <StackLayout Grid.Column="0"  BackgroundColor="White" VerticalOptions="CenterAndExpand" Padding="5,0,0,0"  x:Name="EntryOuterStack">
-          <Entry Text="" IsEnabled="False"  x:Name="FilterPressClip" Placeholder="{x:Static local:AppResources.LSearchPressRelease}"  TextColor="#484848" BackgroundColor="White" VerticalOptions="CenterAndExpand" HeightRequest="35"  />
-        </StackLayout>
-        <StackLayout Padding="1,0,1,0" Grid.Column="1">
-          <Image  x:Name="ApplyButton" Source="ico_search.png"  VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Aspect="Fill" HeightRequest="35" WidthRequest="35">
-            <Image.GestureRecognizers>
-              <TapGestureRecognizer
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0" VerticalOptions="Center" Padding="5"  BackgroundColor="#F7F7F7">
+            <Grid BackgroundColor="White" VerticalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0"  BackgroundColor="White" VerticalOptions="CenterAndExpand" Padding="5,0,0,0"  x:Name="EntryOuterStack">
+                    <Entry Text="" IsEnabled="False" AutomationId="FilterPressClip" x:Name="FilterPressClip" Placeholder="{x:Static local:AppResources.LSearchPressRelease}"  TextColor="#484848" BackgroundColor="White" VerticalOptions="CenterAndExpand" HeightRequest="35"  />
+                </StackLayout>
+                <StackLayout Padding="1,0,1,0" Grid.Column="1">
+                    <Image AutomationId="ApplyButton" x:Name="ApplyButton" Source="ico_search.png"  VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Aspect="Fill" HeightRequest="35" WidthRequest="35">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
                       Tapped="TapSearchImage"
                       NumberOfTapsRequired="1" />
-            </Image.GestureRecognizers>
-          </Image>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+            </Grid>
         </StackLayout>
-      </Grid>
-    </StackLayout>
-    <Grid Grid.Row="1" BackgroundColor="#FFFFFF" Padding="0,0,0,5"  >
-      <Grid   Padding="5,0,5,5"  BackgroundColor="#F7F7F7" ColumnSpacing="5" VerticalOptions="CenterAndExpand">
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="*" />
-          <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <StackLayout Grid.Column="0" BackgroundColor="White" Padding="5,0,0,0" VerticalOptions="CenterAndExpand"  >
-          <Picker SelectedIndex="-1" x:Name="MonthPicker" TextColor="#6d6d6d" Title="{x:Static local:AppResources.LMonth}"  VerticalOptions="CenterAndExpand"  HeightRequest="35" />
-        </StackLayout>
+        <Grid Grid.Row="1" BackgroundColor="#FFFFFF" Padding="0,0,0,5"  >
+            <Grid   Padding="5,0,5,5"  BackgroundColor="#F7F7F7" ColumnSpacing="5" VerticalOptions="CenterAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" BackgroundColor="White" Padding="5,0,0,0" VerticalOptions="CenterAndExpand"  >
+                    <Picker SelectedIndex="-1" AutomationId="MonthPicker" x:Name="MonthPicker" TextColor="#6d6d6d" Title="{x:Static local:AppResources.LMonth}"  VerticalOptions="CenterAndExpand"  HeightRequest="35" />
+                </StackLayout>
 
-        <StackLayout Grid.Column="1" BackgroundColor="White" Padding="5,0,0,0" VerticalOptions="CenterAndExpand" >
-          <Picker SelectedIndex="-1" x:Name="YearPicker"  TextColor="#6d6d6d"  Title="{x:Static local:AppResources.LYear}" VerticalOptions="CenterAndExpand"  HeightRequest="35" />
-        </StackLayout>
-      </Grid>
-    </Grid>
-     <ListView CachingStrategy="RecycleElement" Grid.Row="2" x:Name="lstPressClip" SeparatorVisibility="None"  VerticalOptions="Fill" HasUnevenRows="False"
+                <StackLayout Grid.Column="1" BackgroundColor="White" Padding="5,0,0,0" VerticalOptions="CenterAndExpand" >
+                    <Picker SelectedIndex="-1" AutomationId="YearPicker" x:Name="YearPicker"  TextColor="#6d6d6d"  Title="{x:Static local:AppResources.LYear}" VerticalOptions="CenterAndExpand"  HeightRequest="35" />
+                </StackLayout>
+            </Grid>
+        </Grid>
+        <ListView CachingStrategy="RecycleElement" Grid.Row="2" x:Name="lstPressClip" SeparatorVisibility="None"  VerticalOptions="Fill" HasUnevenRows="False"
 				IsVisible="True" BackgroundColor="Transparent" IsPullToRefreshEnabled="True">
 
-      <ListView.ItemTemplate>
-        <DataTemplate >
-          <ViewCell   StyleId="none">
-            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20,0,20,20" ColumnSpacing="20">
-              <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-              </Grid.ColumnDefinitions>
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <ViewCell   StyleId="none">
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20,0,20,20" ColumnSpacing="20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
 
-              <Grid Padding="1" Grid.Column="0" HeightRequest="250" ClassId="{Binding leftOrignal_image}" BackgroundColor="#f47421">
-                <Grid  BackgroundColor="#F7F7F7" Padding="5" ClassId="{Binding leftTitle}">
-                  <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                  </Grid.RowDefinitions>
-                  <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Row="0" Source="photogalleryplaceholder"  HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="Fill"/>
-                  <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Row="0" Source="{Binding leftImage}"  HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="Fill"/>
-                  <StackLayout  Grid.Row="1" HorizontalOptions="Center" Orientation="Horizontal" >
-                    <Image HorizontalOptions="Center" Source="ico_calendar.png" />
-                    <Label  FontSize="{Binding FontSizeDate_PressName}" Text="{Binding leftDate}"  HorizontalTextAlignment="Center"  HorizontalOptions="Fill" VerticalOptions="End"  TextColor="#f47431" />
-                  </StackLayout>
-                  <labeltwoline:WrappedTruncatedLabelTwoLine ClassId="RemoveBkg" LineBreakMode="TailTruncation" FontSize="{Binding FontSizeTitle}" Grid.Row="2" Text="{Binding leftTitle}"  HorizontalTextAlignment="Center" HorizontalOptions="Fill" VerticalOptions="End"  TextColor="#132561"/>
-                  <Label LineBreakMode="TailTruncation" FontSize="{Binding FontSizeDate_PressName}" Grid.Row="3" Text="{Binding leftPress_name}"  HorizontalTextAlignment="Center" HorizontalOptions="Fill" VerticalOptions="End"  TextColor="#5b5b5b"/>
-                </Grid>
-                <Grid.GestureRecognizers>
-                  <TapGestureRecognizer Tapped="LeftStackTaped"/>
-                </Grid.GestureRecognizers>
-              </Grid>
+                            <Grid Padding="1" Grid.Column="0" HeightRequest="250" ClassId="{Binding leftOrignal_image}" BackgroundColor="#f47421">
+                                <Grid  BackgroundColor="#F7F7F7" Padding="5" ClassId="{Binding leftTitle}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Row="0" Source="photogalleryplaceholder"  HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="Fill"/>
+                                    <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Row="0" Source="{Binding leftImage}"  HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="Fill"/>
+                                    <StackLayout  Grid.Row="1" HorizontalOptions="Center" Orientation="Horizontal" >
+                                        <Image HorizontalOptions="Center" Source="ico_calendar.png" />
+                                        <Label  FontSize="{Binding FontSizeDate_PressName}" Text="{Binding leftDate}"  HorizontalTextAlignment="Center"  HorizontalOptions="Fill" VerticalOptions="End"  TextColor="#f47431" />
+                                    </StackLayout>
+                                    <labeltwoline:WrappedTruncatedLabelTwoLine ClassId="RemoveBkg" LineBreakMode="TailTruncation" FontSize="{Binding FontSizeTitle}" Grid.Row="2" Text="{Binding leftTitle}"  HorizontalTextAlignment="Center" HorizontalOptions="Fill" VerticalOptions="End"  TextColor="#132561"/>
+                                    <Label LineBreakMode="TailTruncation" FontSize="{Binding FontSizeDate_PressName}" Grid.Row="3" Text="{Binding leftPress_name}"  HorizontalTextAlignment="Center" HorizontalOptions="Fill" VerticalOptions="End"  TextColor="#5b5b5b"/>
+                                </Grid>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="LeftStackTaped"/>
+                                </Grid.GestureRecognizers>
+                            </Grid>
 
-              <Grid Padding="1" Grid.Column="1" HeightRequest="250" ClassId="{Binding rightOrignal_image}" BackgroundColor="#f47421"  IsVisible="{Binding RighItemVisible}" >
-                <Grid BackgroundColor="#F7F7F7" Padding="5" ClassId="{Binding rightTitle}">
-                  <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                  </Grid.RowDefinitions>
-                  <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Row="0" Source="photogalleryplaceholder"  HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="Fill"/>
-                  <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Row="0" Source="{Binding rightImage}"  HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="Fill"/>
-                  <StackLayout  Grid.Row="1" HorizontalOptions="Center" Orientation="Horizontal" >
-                    <Image HorizontalOptions="Center" Source="ico_calendar.png" />
-                    <Label  FontSize="{Binding FontSizeDate_PressName}" Text="{Binding rightDate}"  HorizontalTextAlignment="Center"  HorizontalOptions="Fill" VerticalOptions="End"  TextColor="#f47431" />
-                  </StackLayout>
-                  <labeltwoline:WrappedTruncatedLabelTwoLine ClassId="RemoveBkg" LineBreakMode="TailTruncation" FontSize="{Binding FontSizeTitle}" Grid.Row="2" Text="{Binding rightTitle}"  HorizontalTextAlignment="Center" HorizontalOptions="Fill" VerticalOptions="End"  TextColor="#132561"/>
-                  <Label LineBreakMode="TailTruncation" FontSize="{Binding FontSizeDate_PressName}" Grid.Row="3" Text="{Binding leftPress_name}"  HorizontalTextAlignment="Center" HorizontalOptions="Fill" VerticalOptions="End"  TextColor="#5b5b5b"/>
-                </Grid>
-                <Grid.GestureRecognizers>
-                  <TapGestureRecognizer Tapped="RightStackTaped"/>
-                </Grid.GestureRecognizers>
-              </Grid>
+                            <Grid Padding="1" Grid.Column="1" HeightRequest="250" ClassId="{Binding rightOrignal_image}" BackgroundColor="#f47421"  IsVisible="{Binding RighItemVisible}" >
+                                <Grid BackgroundColor="#F7F7F7" Padding="5" ClassId="{Binding rightTitle}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Row="0" Source="photogalleryplaceholder"  HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="Fill"/>
+                                    <ffimageloading:CachedImage DownsampleToViewSize="true"  Grid.Row="0" Source="{Binding rightImage}"  HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="Fill"/>
+                                    <StackLayout  Grid.Row="1" HorizontalOptions="Center" Orientation="Horizontal" >
+                                        <Image HorizontalOptions="Center" Source="ico_calendar.png" />
+                                        <Label  FontSize="{Binding FontSizeDate_PressName}" Text="{Binding rightDate}"  HorizontalTextAlignment="Center"  HorizontalOptions="Fill" VerticalOptions="End"  TextColor="#f47431" />
+                                    </StackLayout>
+                                    <labeltwoline:WrappedTruncatedLabelTwoLine ClassId="RemoveBkg" LineBreakMode="TailTruncation" FontSize="{Binding FontSizeTitle}" Grid.Row="2" Text="{Binding rightTitle}"  HorizontalTextAlignment="Center" HorizontalOptions="Fill" VerticalOptions="End"  TextColor="#132561"/>
+                                    <Label LineBreakMode="TailTruncation" FontSize="{Binding FontSizeDate_PressName}" Grid.Row="3" Text="{Binding leftPress_name}"  HorizontalTextAlignment="Center" HorizontalOptions="Fill" VerticalOptions="End"  TextColor="#5b5b5b"/>
+                                </Grid>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="RightStackTaped"/>
+                                </Grid.GestureRecognizers>
+                            </Grid>
 
-            </Grid>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
-    <!--<Grid Padding="15" Grid.RowSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Black">
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <!--<Grid Padding="15" Grid.RowSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Black">
       <Image  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Source="https://cmo.maharashtra.gov.in/sites/default/files/press_clipping/9%20sep%202016.jpg" Aspect="AspectFill"/>
       <Grid.GestureRecognizers>
          <TapGestureRecognizer Tapped="LargeImageStackTaped"/>
       </Grid.GestureRecognizers>
     </Grid>-->
-    <StackLayout Grid.Row="2" x:Name="loadingIndicator" VerticalOptions="CenterAndExpand">
-      <ActivityIndicator x:Name="loading" IsRunning="True"
+        <StackLayout Grid.Row="2" x:Name="loadingIndicator" VerticalOptions="CenterAndExpand">
+            <ActivityIndicator x:Name="loading" IsRunning="True"
                      HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Color="#f47421">
-        <ActivityIndicator.Scale>
-          <OnPlatform x:TypeArguments="x:Double" iOS="2.0" Android="1.0" />
-        </ActivityIndicator.Scale>
-      </ActivityIndicator>
-    </StackLayout>
-    <StackLayout Padding="0,5,0,0" Grid.Row="2" VerticalOptions="Start" HorizontalOptions="Center">
-      <Label  x:Name="lblNoRecord" Text="{x:Static local:AppResources.LNoRecordsFound}" IsVisible="False" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="#484848" FontAttributes="Bold"/>
-    </StackLayout>
+                <ActivityIndicator.Scale>
+                    <OnPlatform x:TypeArguments="x:Double" iOS="2.0" Android="1.0" />
+                </ActivityIndicator.Scale>
+            </ActivityIndicator>
+        </StackLayout>
+        <StackLayout Padding="0,5,0,0" Grid.Row="2" VerticalOptions="Start" HorizontalOptions="Center">
+            <Label  x:Name="lblNoRecord" Text="{x:Static local:AppResources.LNoRecordsFound}" IsVisible="False" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="#484848" FontAttributes="Bold"/>
+        </StackLayout>
 
-  </Grid>
+    </Grid>
 </ContentPage>

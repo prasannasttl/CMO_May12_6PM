@@ -6,28 +6,28 @@
              xmlns:GradientStackLayout="clr-namespace:CMO.MenuController;assembly=CMO"
              xmlns:local="clr-namespace:CMO.MenuController;assembly=CMO"
              xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
-             xmlns:labelTitle = "clr-namespace:CMO;assembly=CMO"         
-             xmlns:LabelTwoLine="clr-namespace:CMO.Gallery;assembly=CMO" 
+             xmlns:labelTitle = "clr-namespace:CMO;assembly=CMO"
+             xmlns:LabelTwoLine="clr-namespace:CMO.Gallery;assembly=CMO"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              Title="{x:Static labelTitle:AppResources.LHome}">
   <t:MenuContainerPage.Resources>
     <ResourceDictionary>
-    	<Style x:Key="HeaderLabel"  TargetType="Label">
+      <Style x:Key="HeaderLabel"  TargetType="Label">
         <Setter Property="HorizontalTextAlignment" Value="Center" />
         <Setter Property="VerticalOptions" Value="Center" />
-		    <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
         <Setter Property="FontAttributes" Value="Bold" />
         <Setter Property="TextColor" Value="White" />
-    	  <Setter Property="HeightRequest" Value="40" />
-		    <Setter Property="VerticalTextAlignment" Value="Center" />	
-        
-	</Style>
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+
+      </Style>
       <Style x:Key="HeaderLabelGradientStyle"  TargetType="GradientStackLayout:Gradient_Stack">
-		    <!--<Setter Property="Padding" Value="0,0,0,-3" />-->
-         <Setter Property="Margin" Value="0,0,0,-3" />
+        <!--<Setter Property="Padding" Value="0,0,0,-3" />-->
+        <Setter Property="Margin" Value="0,0,0,-3" />
         <Setter Property="VerticalOptions" Value="EndAndExpand" />
         <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-	    </Style>
+      </Style>
       <Style x:Key="ModuleHeaderImageStyle"  TargetType="Image">
         <Setter Property="VerticalOptions" Value="FillAndExpand" />
         <Setter Property="HorizontalOptions" Value="FillAndExpand" />
@@ -37,21 +37,21 @@
       <Style x:Key="GalleryPhotosLabelStyle"  TargetType="Label">
         <Setter Property="HorizontalTextAlignment" Value="Center" />
         <Setter Property="VerticalOptions" Value="Center" />
-		    <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
         <Setter Property="TextColor" Value="White" />
-    	  <Setter Property="HeightRequest" Value="35" />
-		    <Setter Property="VerticalTextAlignment" Value="Center" />	
-	</Style>
+        <Setter Property="HeightRequest" Value="35" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+      </Style>
       <Style x:Key="GalleryPhotosGridStyle"  TargetType="Grid">
         <!--<Setter Property="BackgroundColor" Value="#f7f7f7" />-->
-		    <Setter Property="HeightRequest" Value="100" />
+        <Setter Property="HeightRequest" Value="100" />
         <Setter Property="WidthRequest" Value="150" />
-	    </Style>
+      </Style>
       <Style x:Key="GalleryPhotosGradientStyle"  TargetType="GradientStackLayout:Gradient_Stack">
-		    <Setter Property="Padding" Value="0,0,0,-1" />
+        <Setter Property="Padding" Value="0,0,0,-1" />
         <Setter Property="VerticalOptions" Value="EndAndExpand" />
         <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-	    </Style>
+      </Style>
       <Style x:Key="PlacholderHeaderImageStyle"  TargetType="Image">
         <Setter Property="VerticalOptions" Value="FillAndExpand" />
         <Setter Property="HorizontalOptions" Value="FillAndExpand" />
@@ -67,23 +67,23 @@
       <Style x:Key="BlackHeaderLabelStyle"  TargetType="Label">
         <Setter Property="HorizontalTextAlignment" Value="Center" />
         <Setter Property="VerticalOptions" Value="Center" />
-		    <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="HorizontalOptions" Value="Start" />
         <Setter Property="FontAttributes" Value="Bold" />
         <Setter Property="TextColor" Value="#484848" />
-    	  <Setter Property="HeightRequest" Value="35" />
-		    <Setter Property="VerticalTextAlignment" Value="Center" />	
+        <Setter Property="HeightRequest" Value="35" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
         <Setter Property="Grid.Column" Value="0" />
-	    </Style>
-    	<Style x:Key="ViewAllButtonStyle"  TargetType="Button">
+      </Style>
+      <Style x:Key="ViewAllButtonStyle"  TargetType="Button">
         <Setter Property="TextColor" Value="White" />
         <!--<Setter Property="HeightRequest" Value="35" />-->
         <Setter Property="Grid.Column" Value="1" />
         <Setter Property="BorderColor" Value="#f47421" />
         <Setter Property="BackgroundColor" Value="#f47421" />
         <Setter Property="FontAttributes" Value="Bold" />
-		<Setter Property="ClassId" Value="viewall" />
+        <Setter Property="ClassId" Value="viewall" />
         <Setter Property="VerticalOptions" Value="Center" />
-	    </Style>
+      </Style>
     </ResourceDictionary>
   </t:MenuContainerPage.Resources>
   <t:MenuContainerPage.Content>
@@ -98,7 +98,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-			<RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
           </Grid.RowDefinitions>
           <Grid Grid.Row="0"   HorizontalOptions="Fill" ColumnSpacing="6"  RowSpacing="6" BackgroundColor="#ffffff">
             <Grid.ColumnDefinitions>
@@ -166,10 +166,10 @@
             <Button AutomationId="AbtnNEWS" x:Name="btnNEWS" Text="{x:Static labelTitle:AppResources.LViewAll}" Style="{StaticResource ViewAllButtonStyle}" Clicked="TapNewsUpdatesImage" />
           </Grid>
           <Grid Grid.Row="2" x:Name="NewsCarouselViewGrid"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
-         <!--   <control:CarouselView BackgroundColor="#f7f7f7" x:Name="NewsCarouselView"   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemsSource="{Binding NewsList}" Position="{Binding Position, Mode=TwoWay}"> -->
+            <!--   <control:CarouselView BackgroundColor="#f7f7f7" x:Name="NewsCarouselView"   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemsSource="{Binding NewsList}" Position="{Binding Position, Mode=TwoWay}"> -->
 
-            <controls:CarouselViewControl AutomationId="ANewsCarouselView" 
-									  x:Name="NewsCarouselView" 
+            <controls:CarouselViewControl AutomationId="ANewsCarouselView"
+									  x:Name="NewsCarouselView"
                                       BackgroundColor="#f7f7f7" ItemsSource="{Binding NewsList}" Position="{Binding Position, Mode=TwoWay}"
                                       HorizontalOptions="FillAndExpand"
                                       VerticalOptions="FillAndExpand"
@@ -179,12 +179,12 @@
                                       InterPageSpacingColor="#f7f7f7"
                                       IsSwipingEnabled="true"
                                       Orientation="Horizontal"
-                                      ShowIndicators="false" 
+                                      ShowIndicators="false"
 									  IndicatorsTintColor = "#C6C6C6"
 									  CurrentPageIndicatorTintColor= "#f47421"
 								     >
-			<controls:CarouselViewControl.ItemTemplate>
-				<DataTemplate>
+              <controls:CarouselViewControl.ItemTemplate>
+                <DataTemplate>
                   <Grid AutomationId="AGridNewsItem" BindingContext="{Binding }" HeightRequest="150"  HorizontalOptions="Fill" ColumnSpacing="7" >
                     <Grid.ColumnDefinitions>
                       <ColumnDefinition Width="*"/>
@@ -226,7 +226,7 @@
             <ScrollView AutomationId="ANewsListScroll" Orientation="Horizontal" BackgroundColor="#f7f7f7">
               <StackLayout Orientation="Horizontal">
 
-				<Grid AutomationId="AGridPhoto1" Style="{StaticResource GalleryPhotosGridStyle}" >
+                <Grid AutomationId="AGridPhoto1" Style="{StaticResource GalleryPhotosGridStyle}" >
                   <Image Style="{StaticResource PlacholderHeaderImageStyle}"/>
                   <ffimageloading:CachedImage AutomationId="AImgPhoto1" DownsampleToViewSize="true"  x:Name="ImgPhoto1" Style="{StaticResource HeaderImageStyle}"/>
                   <GradientStackLayout:Gradient_Stack Style="{StaticResource GalleryPhotosGradientStyle}">
@@ -236,7 +236,7 @@
                     <TapGestureRecognizer Tapped="TapGridPhoto1" NumberOfTapsRequired="1" />
                   </Grid.GestureRecognizers>
                 </Grid>
-								
+
                 <Grid AutomationId="AGridPhoto2" Style="{StaticResource GalleryPhotosGridStyle}">
                   <Image Style="{StaticResource PlacholderHeaderImageStyle}"/>
                   <ffimageloading:CachedImage AutomationId="AImgPhoto2" DownsampleToViewSize="true"  x:Name="ImgPhoto2" Style="{StaticResource HeaderImageStyle}"/>
@@ -247,7 +247,7 @@
                     <TapGestureRecognizer Tapped="TapGridPhoto2" NumberOfTapsRequired="1" />
                   </Grid.GestureRecognizers>
                 </Grid>
-								
+
                 <Grid AutomationId="AGridPhoto3" Style="{StaticResource GalleryPhotosGridStyle}">
                   <Image Style="{StaticResource PlacholderHeaderImageStyle}"/>
                   <ffimageloading:CachedImage AutomationId="AImgPhoto3" DownsampleToViewSize="true"  x:Name="ImgPhoto3" Style="{StaticResource HeaderImageStyle}"/>
@@ -258,7 +258,7 @@
                     <TapGestureRecognizer Tapped="TapGridPhoto3" NumberOfTapsRequired="1" />
                   </Grid.GestureRecognizers>
                 </Grid>
-								
+
                 <Grid AutomationId="AGridPhoto4" Style="{StaticResource GalleryPhotosGridStyle}">
                   <Image Style="{StaticResource PlacholderHeaderImageStyle}"/>
                   <ffimageloading:CachedImage AutomationId="AImgPhoto4" DownsampleToViewSize="true"   x:Name="ImgPhoto4" Style="{StaticResource HeaderImageStyle}"/>
@@ -269,7 +269,7 @@
                     <TapGestureRecognizer Tapped="TapGridPhoto4" NumberOfTapsRequired="1" />
                   </Grid.GestureRecognizers>
                 </Grid>
-								
+
                 <Grid AutomationId="AGridPhoto5" Style="{StaticResource GalleryPhotosGridStyle}">
                   <Image Style="{StaticResource PlacholderHeaderImageStyle}"/>
                   <ffimageloading:CachedImage AutomationId="AImgPhoto5" DownsampleToViewSize="true"   x:Name="ImgPhoto5" Style="{StaticResource HeaderImageStyle}"/>
@@ -369,7 +369,7 @@
 
     </Grid>
   </t:MenuContainerPage.Content>
-   <!--<t:MenuContainerPage.ToolbarItems>
+  <!--<t:MenuContainerPage.ToolbarItems>
      <ToolbarItem x:Name="bottomup" Text="GOM APPS" Order="Primary" Priority="1" />
    </t:MenuContainerPage.ToolbarItems>-->
 </t:MenuContainerPage>
