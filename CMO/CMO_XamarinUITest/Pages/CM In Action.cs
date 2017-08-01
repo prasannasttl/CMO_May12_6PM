@@ -16,6 +16,7 @@ namespace CMO_UITest
 		readonly Query _title;
 		readonly Query _MenuBtn;
 		readonly Query _backHeader;
+		readonly Query _menuscroll;
 
 		readonly Query _International;
 		readonly Query _China;
@@ -34,6 +35,7 @@ namespace CMO_UITest
 				_CMInAction = x => x.Marked("AlblCMVISIT_Container");
 				_title = x => x.Marked("CM IN ACTION");
 				_backHeader = x => x.Marked("Navigate up");
+				_menuscroll = x => x.Marked("nav_scroll");
 
 				_International = x => x.Text("International");
 				_China = x => x.Text("China Visit");
@@ -51,6 +53,9 @@ namespace CMO_UITest
 				app.Tap(_MenuBtn);
 				app.WaitForElement(_title, "", TimeSpan.FromSeconds(3));
 				app.Screenshot("Drawer Menu oppened");
+
+				app.ScrollDown(_menuscroll);
+				app.Screenshot("Drawer Layout Scrolled Down");
 
 				app.Tap(_title);
 				app.WaitForElement(_International, "", TimeSpan.FromSeconds(3));

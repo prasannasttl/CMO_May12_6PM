@@ -62,7 +62,7 @@ namespace CMO_UITest
 
 				//Team CMO
 				#region
-				_teamCMO = x => x.Marked("lbl_TeamCMO").Text("Team CMO");
+				_teamCMO = x => x.Marked("lbl_TeamCMO");
 				#endregion
 
 				//Former Maharashtra Chief Minister
@@ -72,7 +72,7 @@ namespace CMO_UITest
 
 				//Contact the CMO
 				#region
-				_ContactCMO = x => x.Marked("lbl_ContactCMO").Text("Contact the CMO");
+				_ContactCMO = x => x.Marked("lbl_ContactCMO");
 				_Name = x => x.Marked("txt_name");
 				_Email = x => x.Marked("txt_Email");
 				_Mobile = x => x.Marked("txt_mobile");
@@ -109,11 +109,11 @@ namespace CMO_UITest
 				app.Screenshot("Menu tapped");
 
 				app.Tap(_CMOffice);
-				app.WaitForElement(_CMOffice);
+				app.WaitForElement(_CMOffice,"",TimeSpan.FromSeconds(5));
 				app.Screenshot("CM's Office tapped");
 
 				app.Tap(_teamCMO);
-				app.WaitForElement(_menuBtn);
+				app.WaitForElement(_menuBtn,"",TimeSpan.FromSeconds(5));
 				app.Screenshot("Team CMO page");
 			}
 			catch (Exception ex)
@@ -128,10 +128,10 @@ namespace CMO_UITest
 			try
 			{
 				app.Tap(_menuBtn);
-				app.WaitForElement(_CMOffice);
+				app.WaitForElement(_CMOffice,"",TimeSpan.FromSeconds(5));
 				app.Screenshot("CM's Office tapped");
 				app.Tap(_FMCM);
-				app.WaitForElement(_menuBtn);
+				app.WaitForElement(_menuBtn,"",TimeSpan.FromSeconds(5));
 				app.Screenshot("Former Maharashtra Chief Minister page");
 
 			}
@@ -148,7 +148,7 @@ namespace CMO_UITest
 			{
 
 				app.Tap(_menuBtn);
-				app.WaitForElement(_CMOffice);
+				app.WaitForElement(_CMOffice,"",TimeSpan.FromSeconds(5));
 				app.Screenshot("CM's Office tapped");
 
 				app.Tap(_ContactCMO);
@@ -158,24 +158,30 @@ namespace CMO_UITest
 				app.Tap(_Name);
 				app.EnterText("Test1");
 				app.Screenshot("Text Entered in Name text Box");
+				app.DismissKeyboard();
+				app.WaitForElement(_submitBtn, "", TimeSpan.FromSeconds(3));
 
 				app.Tap(_Email);
 				app.EnterText("abc@test.com");
 				app.Screenshot("Text Entered in Name text Box");
+				app.DismissKeyboard();
+				app.WaitForElement(_submitBtn, "", TimeSpan.FromSeconds(3));
 
 				app.Tap(_Mobile);
 				app.EnterText("0123456789");
 				app.Screenshot("Text Entered in Name text Box");
+				app.DismissKeyboard();
+				app.WaitForElement(_submitBtn, "", TimeSpan.FromSeconds(3));
 
 				app.Tap(_Subject);
 				app.EnterText("Testing");
 				app.Screenshot("Text Entered in Name text Box");
-
+				app.DismissKeyboard();
+				app.WaitForElement(_submitBtn, "", TimeSpan.FromSeconds(3));
 
 				app.Tap(_messageBox);
 				app.EnterText("Test123");
 				app.Screenshot("Text Entered in Message text Box");
-
 				app.DismissKeyboard();
 				app.WaitForElement(_submitBtn, "", TimeSpan.FromSeconds(3));
 

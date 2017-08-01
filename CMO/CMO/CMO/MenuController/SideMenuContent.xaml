@@ -56,7 +56,7 @@
                 <Label x:Name="MenuHeader" ClassId="MENU" Margin="0,0,0,10" Text="{x:Static local:AppResources.LMenu}" VerticalOptions="EndAndExpand" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="White" VerticalTextAlignment="Center" FontSize="Medium" FontAttributes="Bold"/>
             </StackLayout>
             <ScrollView>
-                <StackLayout VerticalOptions="FillAndExpand" Padding="0,0,0,10" >
+                <StackLayout AutomationId="nav_scroll" VerticalOptions="FillAndExpand" Padding="0,0,0,10" >
                     <!-- Home  -->
                     <StackLayout AutomationId="lbl_Home" x:Name="HeaderStackHome" Style="{StaticResource ModuleHaderStackStyle}">
                         <Label x:Name="HomeHeader" Style="{StaticResource ModuleHeaderName}" Text="{x:Static local:AppResources.LHome}"/>
@@ -68,18 +68,18 @@
                         <Image x:Name="CMOfficeImage"  Style="{StaticResource ImageRightArrowStyle}"/>
                     </StackLayout>
                     <StackLayout x:Name="StackCMOffice" Style="{StaticResource ModuleItemMAINStackStyle}">
-                        <StackLayout AutomationId="lbl_TeamCMO" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemTeamCMO"   Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LTeamcmo}" />
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_TeamCMO" x:Name="ItemTeamCMO"   Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LTeamcmo}" />
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_FormerCMs" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemFormerCMs" Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LFormercmo}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_FormerCMs" x:Name="ItemFormerCMs" Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LFormercmo}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_ContactCMO" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemContactCMO"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LContactcmo}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_ContactCMO" x:Name="ItemContactCMO"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LContactcmo}"/>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout  Style="{StaticResource WhiteBorderStyle}"/>
-                    <!-- Chief Minister -->
+                    <!-- Meet The Chief Minister -->
                     <Grid AutomationId="lbl_MeetCM" x:Name="HeaderStackChiefMinister" HorizontalOptions="FillAndExpand" Padding="15,7,20,7" BackgroundColor="#141b3d" >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
@@ -89,14 +89,14 @@
                         <Image  Grid.Column="1" x:Name="ChiefMinisterImage"  Style="{StaticResource ImageRightArrowStyle}" />
                     </Grid>
                     <StackLayout  x:Name="StackCheifMinister" Style="{StaticResource ModuleItemMAINStackStyle}">
-                        <StackLayout AutomationId="lbl_Biography" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemBiography"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LBiography}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_Biography" x:Name="ItemBiography"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LBiography}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_VissionMissionOath" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemVissionMissionOath"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LVisionMissionOath}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_VissionMissionOath" x:Name="ItemVissionMissionOath"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LVisionMissionOath}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_PersonalWebsite" Style="{StaticResource ModuleItemStackStyle}" IsVisible="False">
-                            <Label x:Name="ItemPersonalWebsite"   Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LPersonalWebsite}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}" IsVisible="False">
+                            <Label AutomationId="lbl_PersonalWebsite" x:Name="ItemPersonalWebsite"   Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LPersonalWebsite}"/>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout Style="{StaticResource WhiteBorderStyle}"/>
@@ -106,29 +106,29 @@
                         <Image Source="ico_down_arrow2_right.png" x:Name="InititiativesImage" HorizontalOptions="EndAndExpand" />
                     </StackLayout>
                     <StackLayout x:Name="StackInitiatives" Style="{StaticResource ModuleItemMAINStackStyle}">
-                        <StackLayout AutomationId="lbl_ApleSarkar" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemApleSarkar"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LAapleSarkar}" />
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_ApleSarkar" x:Name="ItemApleSarkar"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LAapleSarkar}" />
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_JalyuktaShivar" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemDroughtFreeMaharashtra"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LDroughtFreeMaharashtra}" />
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_JalyuktaShivar" x:Name="ItemDroughtFreeMaharashtra"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LDroughtFreeMaharashtra}" />
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_SwatchMaharashtra" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemSwatchMaharashtra"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LSwachhMaharashtra}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_SwatchMaharashtra" x:Name="ItemSwatchMaharashtra"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LSwachhMaharashtra}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_MakeInMaharashtra" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemMakeInMaharashtra"   Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMakeInMaharashtra}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_MakeInMaharashtra"  x:Name="ItemMakeInMaharashtra"   Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMakeInMaharashtra}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_SkillDevelopment" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemSkillDevelopment"   Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LSkillDevelopment}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_SkillDevelopment" x:Name="ItemSkillDevelopment"   Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LSkillDevelopment}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_RightToService" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemRightToService"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LRightToService}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_RightToService" x:Name="ItemRightToService"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LRightToService}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_DigitalMaharashtra" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemDigitalMaharashtra"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LDigitalMaharashtra}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_DigitalMaharashtra" x:Name="ItemDigitalMaharashtra"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LDigitalMaharashtra}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_ChiefMinistersAssistance" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemChiefMinistersAssistance"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LChiefMinistersAssistanceCell}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_ChiefMinistersAssistance" x:Name="ItemChiefMinistersAssistance"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LChiefMinistersAssistanceCell}"/>
                         </StackLayout>
 
                     </StackLayout>
@@ -139,26 +139,26 @@
                         <Image x:Name="TeamMaharashtraImage"  Style="{StaticResource ImageRightArrowStyle}" />
                     </StackLayout>
                     <StackLayout x:Name="StackTeamMaharashtra" Style="{StaticResource ModuleItemMAINStackStyle}">
-                        <StackLayout AutomationId="lbl_Governer" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemGoverner"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LGovernor}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_Governer" x:Name="ItemGoverner"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LGovernor}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_CabinetMinister" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemCabinetMinister"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LCabinetMinister}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_CabinetMinister" x:Name="ItemCabinetMinister"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LCabinetMinister}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_StateMinister" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemStateMinister"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LStateMinisters}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_StateMinister" x:Name="ItemStateMinister"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LStateMinisters}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_ChiefJustice" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemChiefJustice"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMenuChiefMinister}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_ChiefJustice" x:Name="ItemChiefJustice"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMenuChiefMinister}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_Secretaries" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemSecretaries"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LSecretaries}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_Secretaries" x:Name="ItemSecretaries"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LSecretaries}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_Collectors" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemCollectors"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LCollectors}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_Collectors" x:Name="ItemCollectors"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LCollectors}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_GovtDepartment" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemGovtDepartment"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LGovtDepartment}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_GovtDepartment"  x:Name="ItemGovtDepartment"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LGovtDepartment}"/>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout Style="{StaticResource WhiteBorderStyle}"/>
@@ -168,14 +168,14 @@
                         <Image x:Name="CMVisitImage"  Style="{StaticResource ImageRightArrowStyle}" />
                     </StackLayout>
                     <StackLayout x:Name="StackCMVisit" Style="{StaticResource ModuleItemMAINStackStyle}">
-                        <StackLayout AutomationId="lbl_MakeInMaharashtraGoesInternational" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemMakeInMaharashtraGoesInternational"   Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LForeignVisits}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_MakeInMaharashtraGoesInternational"  x:Name="ItemMakeInMaharashtraGoesInternational"   Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LForeignVisits}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_MaharashtraVisits" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemMaharashtraVisits"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMaharashtraVisits}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_MaharashtraVisits" x:Name="ItemMaharashtraVisits"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMaharashtraVisits}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_JalyuktaVisit" Style="{StaticResource ModuleItemStackStyle}" IsVisible="False">
-                            <Label x:Name="ItemJalyuktaVisit"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LJalyuktaVisits}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}" IsVisible="False">
+                            <Label AutomationId="lbl_JalyuktaVisit" x:Name="ItemJalyuktaVisit"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LJalyuktaVisits}"/>
                         </StackLayout>
                         <!--<StackLayout Style="{StaticResource ModuleItemStackStyle}" IsVisible="False">
             <Label x:Name="ItemEvents"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LEvents}" />
@@ -188,26 +188,26 @@
                         <Image x:Name="MediaGalleryImage"  Style="{StaticResource ImageRightArrowStyle}" />
                     </StackLayout>
                     <StackLayout x:Name="StackMediaGallery" Style="{StaticResource ModuleItemMAINStackStyle}">
-                        <StackLayout AutomationId="lbl_NewsUpdates" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemNewsGallery"   Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LNewsGallery}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_NewsUpdates" x:Name="ItemNewsGallery"   Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LNewsGallery}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_PressClip" Style="{StaticResource ModuleItemStackStyle}" >
-                            <Label x:Name="ItemPressClip" Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LPressClip}" />
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}" >
+                            <Label AutomationId="lbl_PressClip" x:Name="ItemPressClip" Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LPressClip}" />
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_PressReleases"  Style="{StaticResource ModuleItemStackStyle}" IsVisible="False" >
-                            <Label x:Name="ItemPressReleases"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMenuPressRelease}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}" IsVisible="False" >
+                            <Label AutomationId="lbl_PressReleases" x:Name="ItemPressReleases"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMenuPressRelease}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_PhotoGallery" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemPhotoGallery"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMenuPhotoGallery}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_PhotoGallery" x:Name="ItemPhotoGallery"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMenuPhotoGallery}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_VideoGallery" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemVideoGallery"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMenuVideoGallery}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_VideoGallery" x:Name="ItemVideoGallery"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMenuVideoGallery}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_MagazineGallery" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label x:Name="ItemMagazineGallery"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMagazineGallery}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_MagazineGallery" x:Name="ItemMagazineGallery"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMagazineGallery}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_Events" Style="{StaticResource ModuleItemStackStyle}" >
-                            <Label x:Name="ItemEvents"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LEvents}" />
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}" >
+                            <Label AutomationId="lbl_Events" x:Name="ItemEvents"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LEvents}" />
                         </StackLayout>
 
                     </StackLayout>
@@ -219,17 +219,17 @@
                     </StackLayout>
                     <StackLayout x:Name="StackJoinUs" Style="{StaticResource ModuleItemMAINStackStyle}">
 
-                        <StackLayout AutomationId="lbl_SocialResponsibilityCell" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label  x:Name="ItemSocialResponsibilityCell"  Style="{StaticResource ModuleItemName}"  Text="{x:Static local:AppResources.LSocialResponsibilityCell}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_SocialResponsibilityCell" x:Name="ItemSocialResponsibilityCell"  Style="{StaticResource ModuleItemName}"  Text="{x:Static local:AppResources.LSocialResponsibilityCell}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_CMsInternshipProgram" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label  x:Name="ItemCMsInternshipProgram" Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LCmInternshipProgram}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_CMsInternshipProgram" x:Name="ItemCMsInternshipProgram" Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LCmInternshipProgram}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_CMsReliefFund" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label  x:Name="ItemCMsReliefFund" Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LCmReliefsFund}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_CMsReliefFund" x:Name="ItemCMsReliefFund" Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LCmReliefsFund}"/>
                         </StackLayout>
-                        <StackLayout AutomationId="lbl_MyGov" Style="{StaticResource ModuleItemStackStyle}">
-                            <Label  x:Name="ItemMyGov" Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMyGov}"/>
+                        <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                            <Label AutomationId="lbl_MyGov" x:Name="ItemMyGov" Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMyGov}"/>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout Style="{StaticResource WhiteBorderStyle}"/>

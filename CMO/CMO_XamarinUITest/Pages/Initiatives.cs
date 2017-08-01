@@ -31,7 +31,7 @@ namespace CMO_UITest
 			if (OnAndroid)
 			{
 				_menuBtn = x => x.Marked("Navigate up");
-				_titleInitiatives = x => x.Marked("INITIATIVES");
+				_titleInitiatives = x => x.Marked("lbl_Initiatives");
 
 				_Initiatives = x => x.Marked("AlblINITIATIVES_Container");
 

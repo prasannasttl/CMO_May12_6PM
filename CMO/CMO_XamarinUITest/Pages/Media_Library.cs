@@ -20,6 +20,7 @@ namespace CMO_UITest
 		readonly Query _photoGallery;
 		readonly Query _videoGallery;
 		readonly Query _publicationGallery;
+		readonly Query _menuscroll;
 		readonly Query _eventsCalendar;
 
 		public Media_Library(IApp app, Platform platform)
@@ -34,6 +35,7 @@ namespace CMO_UITest
 				_photoGallery = x => x.Marked("Photo Gallery");
 				_videoGallery = x => x.Marked("Video Gallery");
 				_publicationGallery = x => x.Text("Publications Gallery");
+				_menuscroll = x => x.Marked("nav_scroll");
 				_eventsCalendar = x => x.Marked("Events Calendar");
 			}
 		}
@@ -168,6 +170,10 @@ namespace CMO_UITest
 				app.Tap(_menuBtn);
 				app.WaitForElement(_medialib, "", TimeSpan.FromSeconds(5));
 				app.Screenshot("Menu Openned or Navigation Drawer Openned");
+
+
+				app.ScrollDown(_menuscroll);
+				app.Screenshot("Navigation Drawer Openned");
 
 				//app.Tap(_medialib);
 				//app.WaitForElement(_eventsCalendar, "", TimeSpan.FromSeconds(5));

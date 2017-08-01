@@ -33,7 +33,7 @@ namespace CMO_UITest
 				#region
 				_MenuBtn = x => x.Marked("Navigate up");
 				_MeetCM = x => x.Marked("AlblCHIEFMINISTER_Container");
-				_meetTheCM = x => x.Marked("MEET THE CHIEF MINISTER");
+				_meetTheCM = x => x.Marked("lbl_MeetCM");
 				_backHeader = x => x.Marked("Navigate up");
 				_Header = x => x.Marked("action_bar").Text("MEET THE CHIEF MINISTER");
 				_Biography = x => x.Text("Biography");
@@ -51,7 +51,7 @@ namespace CMO_UITest
 			try
 			{
 				app.Tap(_MenuBtn);
-				app.WaitForElement(_meetTheCM,"",TimeSpan.FromSeconds(3));
+				app.WaitForElement(_meetTheCM,"",TimeSpan.FromSeconds(5));
 				app.Screenshot("Navigation Drawer Openned");
 
 				app.Tap(_meetTheCM);
