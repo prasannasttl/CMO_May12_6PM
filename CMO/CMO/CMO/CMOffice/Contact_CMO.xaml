@@ -153,7 +153,7 @@
 
                     <Frame Style="{StaticResource FrameEntryStyle}" Padding="1">
                         <Frame.Content>
-                            <Grid Padding="5,0,0,0" BackgroundColor="White">
+                            <Grid AutomationId="txt_Message" Padding="5,0,0,0" BackgroundColor="White">
                                 <Editor VerticalOptions="Start" x:Name="txtMessage" TextColor="#484848"  ClassId="300" BackgroundColor="White" HeightRequest="100" />
                                 <Label IsEnabled="False" Margin="0,5,0,0" x:Name="MessageTextOverlap"  Text="{x:Static local:AppResources.LContactMessage}"  TextColor="#484848"/>
                             </Grid>
@@ -295,7 +295,7 @@
                         <Label x:Name="SubjectAlert" Style="{StaticResource TextBoxAlertStyle}"/>
                     </StackLayout>
 
-                    <StackLayout Orientation="Horizontal">
+                    <StackLayout AutomationId="txt_ContactMessage" Orientation="Horizontal">
                         <Label Text="*" Style="{StaticResource Requirefieldtextstyle}" />
                         <Label x:Name="ContactMessage" Style="{StaticResource SubTitleStyle}" />
                     </StackLayout>

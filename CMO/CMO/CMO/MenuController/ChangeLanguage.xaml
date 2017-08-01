@@ -18,7 +18,7 @@
       </Grid.ColumnDefinitions>
       <Label x:Name="English" FontAttributes="Bold" TextColor="#f47421" Grid.Column="0" Text="English" VerticalOptions="Center" HorizontalTextAlignment="Start" HorizontalOptions="Start" />
       <StackLayout Grid.Column="1" Padding="7">
-			<Switch Grid.Column="1" x:Name="EnglishChangeLanguageSwitch" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" />
+			<Switch Grid.Column="1" AutomationId="btn_EnglishChangeLanguageSwitch" x:Name="EnglishChangeLanguageSwitch" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" />
 			</StackLayout>
 	  <Grid.GestureRecognizers>
         <TapGestureRecognizer Tapped="EnglishLanguageTap" NumberOfTapsRequired="1" />
@@ -31,7 +31,7 @@
       </Grid.ColumnDefinitions>
       <Label x:Name="Marathi"  FontAttributes="Bold"   TextColor="#f47421" Grid.Column="0" Text="मराठी" VerticalOptions="Center" HorizontalTextAlignment="Start"  HorizontalOptions="Start" />
          <StackLayout Grid.Column="1" Padding="7">
-			<Switch Grid.Column="1" x:Name="MarathiChangeLanguageSwitch" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" />
+			<Switch Grid.Column="1" AutomationId="btn_MarathiChangeLanguageSwitch" x:Name="MarathiChangeLanguageSwitch" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" />
 			</StackLayout>
 				<Grid.GestureRecognizers>
         <TapGestureRecognizer Tapped="MarathiLanguageTap" NumberOfTapsRequired="1" />

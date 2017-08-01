@@ -29,10 +29,10 @@ namespace CMO_UITest
 			app.Tap(c => c.Button("ABannerButton").Text("  CHIEF MINISTER OFFICE >  "));
 			app.WaitForElement(c=> c.Text("HOME"));
 
-			TapAlltheButtonsWhenServiceCalled();
+			//TapAlltheButtonsWhenServiceCalled();
 
-			CheckNewsListServiceCalled();
-			app.Repl();
+			//CheckNewsListServiceCalled();
+			//app.Repl();
 		}
 
 		public void TapAlltheButtonsWhenServiceCalled()

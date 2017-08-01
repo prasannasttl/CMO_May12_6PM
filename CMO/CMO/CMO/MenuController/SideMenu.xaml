@@ -62,7 +62,7 @@
                     <ScrollView>
                         <StackLayout x:Name="SubScrollStack"  VerticalOptions="FillAndExpand" >
                             <!-- Home  -->
-                            <StackLayout x:Name="HeaderStackHOME" Style="{StaticResource ModuleHaderStackStyle}">
+                            <StackLayout AutomationId="lbl_Home" x:Name="HeaderStackHOME" Style="{StaticResource ModuleHaderStackStyle}">
                                 <Label x:Name="HOMEHeader" Style="{StaticResource ModuleHeaderName}" Text="{x:Static local:AppResources.LHome}"/>
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="HomeHeaderGestureRecognizer_Tapped" />
@@ -70,7 +70,7 @@
                             </StackLayout>
                             <StackLayout Style="{StaticResource WhiteBorderStyle}"/>
                             <!-- CM Office -->
-                            <StackLayout  x:Name="HEADERSTACKCMOffice" Style="{StaticResource ModuleHaderStackStyle}">
+                            <StackLayout AutomationId="lbl_CM_Office" x:Name="HEADERSTACKCMOffice" Style="{StaticResource ModuleHaderStackStyle}">
                                 <Label x:Name="CMOfficeHEADER" Style="{StaticResource ModuleHeaderName}" Text="{x:Static local:AppResources.LCmOffice}"/>
                                 <Image x:Name="CMOfficeIMAGE"  Style="{StaticResource ImageRightArrowStyle}"/>
                                 <StackLayout.GestureRecognizers>
@@ -78,19 +78,19 @@
                                 </StackLayout.GestureRecognizers>
                             </StackLayout>
                             <StackLayout x:Name="STACKCMOffice" Style="{StaticResource ModuleItemMAINStackStyle}">
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_TeamCMO" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMTeamCMO"   Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LTeamcmo}" />
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="ItemTeamCMO_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_FormerCMs" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMFormerCMs" Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LFormercmo}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="ItemFormerCMTap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_ContactCMO" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMContactCMO"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LContactcmo}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="ItemContactCMOTap_Tapped" />
@@ -98,8 +98,8 @@
                                 </StackLayout>
                             </StackLayout>
                             <StackLayout  Style="{StaticResource WhiteBorderStyle}"/>
-                            <!-- Chief Minister -->
-                            <Grid x:Name="HEADERSTACKChiefMinister" HorizontalOptions="FillAndExpand" Padding="15,7,20,7" BackgroundColor="#141b3d" >
+                            <!-- Meet The Chief Minister -->
+                            <Grid AutomationId="lbl_MeetCM" x:Name="HEADERSTACKChiefMinister" HorizontalOptions="FillAndExpand" Padding="15,7,20,7" BackgroundColor="#141b3d" >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="Auto" />
@@ -111,19 +111,19 @@
                                 </Grid.GestureRecognizers>
                             </Grid>
                             <StackLayout  x:Name="STACKChiefMinister" Style="{StaticResource ModuleItemMAINStackStyle}">
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_Biography" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMBiography"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LBiography}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="Biographytap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_VissionMissionOath" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMVissionMissionOath"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LVisionMissionOath}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="VisionMissionOathTap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}" IsVisible="False">
+                                <StackLayout AutomationId="lbl_PersonalWebsite" Style="{StaticResource ModuleItemStackStyle}" IsVisible="False">
                                     <Label x:Name="ITEMPersonalWebsite"   Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LPersonalWebsite}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="PersonalWebsiteTap_Tapped" />
@@ -132,7 +132,7 @@
                             </StackLayout>
                             <StackLayout Style="{StaticResource WhiteBorderStyle}"/>
                             <!-- Initiatives -->
-                            <StackLayout x:Name="HEADERSTACKInitiatives" Style="{StaticResource ModuleHaderStackStyle}">
+                            <StackLayout AutomationId="lbl_Initiatives" x:Name="HEADERSTACKInitiatives" Style="{StaticResource ModuleHaderStackStyle}">
                                 <Label  x:Name="InitiativesHEADER" Style="{StaticResource ModuleHeaderName}" Text="{x:Static local:AppResources.LInitiatives}"/>
                                 <Image Source="ico_down_arrow2_right.png" x:Name="InitiativesIMAGE" HorizontalOptions="EndAndExpand" />
                                 <StackLayout.GestureRecognizers>
@@ -140,49 +140,49 @@
                                 </StackLayout.GestureRecognizers>
                             </StackLayout>
                             <StackLayout x:Name="STACKInitiatives" Style="{StaticResource ModuleItemMAINStackStyle}">
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_ApleSarkar" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMApleSarkar"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LAapleSarkar}" />
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="ApleSarkarTap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_DroughtFreeMaharashtra" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMDroughtFreeMaharashtra"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LDroughtFreeMaharashtra}" />
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="DroughtFreeMaharashtraTap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_SwatchMaharashtra" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMSwatchMaharashtra"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LSwachhMaharashtra}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="SwatchMaharashtraTap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_MakeInMaharashtra" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMMakeInMaharashtra"   Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMakeInMaharashtra}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="MakeInMaharashtraTap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_SkillDevelopment" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMSkillDevelopment"   Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LSkillDevelopment}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="SkillDevelopmentTap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_RightToService" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMRightToService"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LRightToService}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="RightToServiceTap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_DigitalMaharashtra" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMDigitalMaharashtra"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LDigitalMaharashtra}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="DigitalMaharashtraTap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_ChiefMinistersAssistance" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMChiefMinistersAssistance"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LChiefMinistersAssistanceCell}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="ChiefMinisterAssistanceTap_Tapped" />
@@ -192,7 +192,7 @@
                             </StackLayout>
                             <StackLayout Style="{StaticResource WhiteBorderStyle}"/>
                             <!-- Team Maharashtra -->
-                            <StackLayout x:Name="HEADERSTACKTeamMaharashtra" Style="{StaticResource ModuleHaderStackStyle}">
+                            <StackLayout AutomationId="lbl_TeamMaharashtra" x:Name="HEADERSTACKTeamMaharashtra" Style="{StaticResource ModuleHaderStackStyle}">
                                 <Label x:Name="TeamMaharashtrasHEADER" Style="{StaticResource ModuleHeaderName}" Text="{x:Static local:AppResources.LTeamMaharashtra}"/>
                                 <Image x:Name="TeamMaharashtrasIMAGE"  Style="{StaticResource ImageRightArrowStyle}" />
                                 <StackLayout.GestureRecognizers>
@@ -200,43 +200,43 @@
                                 </StackLayout.GestureRecognizers>
                             </StackLayout>
                             <StackLayout x:Name="STACKTeamMaharashtra" Style="{StaticResource ModuleItemMAINStackStyle}">
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_Governer" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMGoverner"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LGovernor}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="ItemGovernorTap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_CabinetMinister" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMCabinetMinister"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LCabinetMinister}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="ItemCabinetMinisterTap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_StateMinister" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMStateMinister"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LStateMinisters}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="ItemStateMinisterTap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_ChiefJustice" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMChiefJustice"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMenuChiefMinister}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="ItemChiefJusticeTap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_Secretaries" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMSecretaries"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LSecretaries}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="ItemSecretariesTap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_Collectors" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMCollectors"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LCollectors}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="ItemCollectorsTap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_GovtDepartment" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMGovtDepartment"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LGovtDepartment}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="ItemGovtDeptTap_Tapped" />
@@ -245,7 +245,7 @@
                             </StackLayout>
                             <StackLayout Style="{StaticResource WhiteBorderStyle}"/>
                             <!-- CM Visit-->
-                            <StackLayout x:Name="HEADERSTACKCMVisit" Style="{StaticResource ModuleHaderStackStyle}">
+                            <StackLayout AutomationId="lbl_CMVisit" x:Name="HEADERSTACKCMVisit" Style="{StaticResource ModuleHaderStackStyle}">
                                 <Label x:Name="CMVisitHEADER" Style="{StaticResource ModuleHeaderName}" Text="{x:Static local:AppResources.LCmVisits}"/>
                                 <Image x:Name="CMVisitIMAGE"  Style="{StaticResource ImageRightArrowStyle}" />
                                 <StackLayout.GestureRecognizers>
@@ -253,19 +253,19 @@
                                 </StackLayout.GestureRecognizers>
                             </StackLayout>
                             <StackLayout x:Name="STACKCMVisit" Style="{StaticResource ModuleItemMAINStackStyle}">
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_MakeInMaharashtraGoesInternational" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMMakeInMaharashtraGoesInternational"   Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LForeignVisits}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="ItemMakeInMaharashtraGoesInternationalTap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_MaharashtraVisits" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMMaharashtraVisits"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMaharashtraVisits}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="ItemMaharashtraVisitsTap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}" IsVisible="False">
+                                <StackLayout AutomationId="lbl_JalyuktaVisit" Style="{StaticResource ModuleItemStackStyle}" IsVisible="False">
                                     <Label x:Name="ITEMJalyuktaVisit"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LJalyuktaVisits}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="ItemJalyuktaVisitsTap_Tapped" />
@@ -277,7 +277,7 @@
                             </StackLayout>
                             <StackLayout Style="{StaticResource WhiteBorderStyle}"/>
                             <!-- Gallery -->
-                            <StackLayout x:Name="HEADERSTACKGalleryModule" Style="{StaticResource ModuleHaderStackStyle}">
+                            <StackLayout AutomationId="lbl_Gallery" x:Name="HEADERSTACKGalleryModule" Style="{StaticResource ModuleHaderStackStyle}">
                                 <Label x:Name="GalleryModuleHEADER" Style="{StaticResource ModuleHeaderName}" Text="{x:Static local:AppResources.LGallery}"/>
                                 <Image x:Name="GalleryModuleIMAGE"  Style="{StaticResource ImageRightArrowStyle}" />
                                 <StackLayout.GestureRecognizers>
@@ -285,43 +285,43 @@
                                 </StackLayout.GestureRecognizers>
                             </StackLayout>
                             <StackLayout x:Name="STACKGalleryModule" Style="{StaticResource ModuleItemMAINStackStyle}">
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_NewsGallery" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMNewsGallery"   Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LNewsGallery}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="NewsGalleryTapped_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}" >
+                                <StackLayout AutomationId="lbl_PressClips" Style="{StaticResource ModuleItemStackStyle}" >
                                     <Label x:Name="ITEMPressClips"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LPressClip}" />
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="ItemPressClipTap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}" IsVisible="False" >
+                                <StackLayout AutomationId="lbl_PressReleases" Style="{StaticResource ModuleItemStackStyle}" IsVisible="False" >
                                     <Label x:Name="ITEMPressReleases"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMenuPressRelease}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="PressReleaseTapped_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_PhotoGallery" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMPhotoGallery"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMenuPhotoGallery}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="PhotoGalleryTapped_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_VideoGallery" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMVideoGallery"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMenuVideoGallery}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="VideoGalleryTapped_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_MagazineGallery" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMMagazineGallery"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMagazineGallery}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="MagazineTapped_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}" >
+                                <StackLayout AutomationId="lbl_Events" Style="{StaticResource ModuleItemStackStyle}" >
                                     <Label x:Name="ITEMEvents"  Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LEvents}" />
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="ItemEventsTap_Tapped" />
@@ -331,7 +331,7 @@
                             </StackLayout>
                             <StackLayout Style="{StaticResource WhiteBorderStyle}"/>
                             <!-- Join Us -->
-                            <StackLayout x:Name="HEADERSTACKJoinUs" Style="{StaticResource ModuleHaderStackStyle}">
+                            <StackLayout AutomationId="lbl_JoinUs" x:Name="HEADERSTACKJoinUs" Style="{StaticResource ModuleHaderStackStyle}">
                                 <Label x:Name="JoinUsHEADER" Style="{StaticResource ModuleHeaderName}" Text="{x:Static local:AppResources.LJoinUs}"/>
                                 <Image x:Name="JoinUsIMAGE"  Style="{StaticResource ImageRightArrowStyle}"  />
                                 <StackLayout.GestureRecognizers>
@@ -340,25 +340,25 @@
                             </StackLayout>
                             <StackLayout x:Name="STACKJoinUs" Style="{StaticResource ModuleItemMAINStackStyle}">
 
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_SocialResponsibilityCell" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMSocialResponsibilityCell"  Style="{StaticResource ModuleItemName}"  Text="{x:Static local:AppResources.LSocialResponsibilityCell}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="SocialRespomsibilityCellTap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_CMsInternshipProgram" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMmCMsInternshipProgram" Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LCmInternshipProgram}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="CMInternshipProgramTap_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_CMsReliefFund" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMCMsReliefFund" Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LCmReliefsFund}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="CMsReliefFund_Tapped" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                                <StackLayout Style="{StaticResource ModuleItemStackStyle}">
+                                <StackLayout AutomationId="lbl_MyGov" Style="{StaticResource ModuleItemStackStyle}">
                                     <Label x:Name="ITEMMyGov" Style="{StaticResource ModuleItemName}" Text="{x:Static local:AppResources.LMyGov}"/>
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="MyGovTap_Tapped" />
@@ -367,7 +367,7 @@
                             </StackLayout>
                             <StackLayout Style="{StaticResource WhiteBorderStyle}"/>
                             <!--Changelanguage-->
-                            <StackLayout  x:Name="HEADERSTACKChangeLanguage" Style="{StaticResource ModuleHaderStackStyle}">
+                            <StackLayout AutomationId="lbl_Changelanguage"  x:Name="HEADERSTACKChangeLanguage" Style="{StaticResource ModuleHaderStackStyle}">
                                 <Label x:Name="ChangeLanguageHEADERLABEL" Style="{StaticResource ModuleHeaderName}" Text="{x:Static local:AppResources.LChangeLanguage}"/>
                                 <Image x:Name="ChangeLanguageIMAGE"       Style="{StaticResource ImageRightArrowStyle}" IsVisible="false"/>
                                 <StackLayout.GestureRecognizers>
