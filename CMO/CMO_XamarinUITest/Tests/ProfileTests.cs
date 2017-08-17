@@ -28,8 +28,9 @@ namespace CMO_UITest
 			}
 		}
 
-		
+
 		#region Navigation Menu
+
 		[Category("Team COM")]
 		[Test]
 		public void B_Team_COM_Test()
@@ -229,7 +230,7 @@ namespace CMO_UITest
 
 		[Category("Publication Gallery")]
 		[Test]
-		public void O_Publication_Gallery_Test()
+		public void M_Publication_Gallery_Test()
 		{
 			try
 			{
@@ -247,7 +248,7 @@ namespace CMO_UITest
 
 		[Category("Events Calendar")]
 		[Test]
-		public void M_Events_Calendar_Test()
+		public void N_Events_Calendar_Test()
 		{
 			try
 			{
@@ -267,7 +268,7 @@ namespace CMO_UITest
 
 		[Category("Join US")]
 		[Test]
-		public void N_Join_US_Test()
+		public void O_Join_US_Test()
 		{
 			try
 			{
@@ -285,7 +286,7 @@ namespace CMO_UITest
 
 		[Category("Change Language")]
 		[Test]
-		public void O_Change_Language_Test()
+		public void P_Change_Language_Test()
 		{
 			try
 			{
@@ -316,10 +317,9 @@ namespace CMO_UITest
 
 
 
-
 		[Category("Main Application Page")]
 		[Test]
-		public void P_Main_Application_Page_Test()
+		public void Q_Main_Application_Page_Test()
 		{
 			try
 			{
@@ -335,7 +335,7 @@ namespace CMO_UITest
 
 		[Category("Meet the CM Page")]
 		[Test]
-		public void Q_Meet_the_CM_Page_Test()
+		public void R_Meet_the_CM_Page_Test()
 		{
 			try
 			{
@@ -353,7 +353,7 @@ namespace CMO_UITest
 
 		[Category("CM In Action")]
 		[Test]
-		public void R_CM_In_Action_Page_Test()
+		public void S_CM_In_Action_Page_Test()
 		{
 			try
 			{
@@ -370,7 +370,7 @@ namespace CMO_UITest
 
 		[Category("Team Maharashtra Page")]
 		[Test]
-		public void S_Team_Maharashtra_Page_Test()
+		public void T_Team_Maharashtra_Page_Test()
 		{
 			try
 			{
@@ -387,7 +387,7 @@ namespace CMO_UITest
 
 		[Category("Initiative Page")]
 		[Test]
-		public void T_Initiative_Page_Test()
+		public void U_Initiative_Page_Test()
 		{
 			try
 			{
@@ -405,7 +405,7 @@ namespace CMO_UITest
 
 		[Category("Join US Page")]
 		[Test]
-		public void U_Join_US_Page_Test()
+		public void V_Join_US_Page_Test()
 		{
 			try
 			{

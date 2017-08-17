@@ -11,12 +11,12 @@ namespace CMO_UITest
         const string apiKey = "YOUR_API_KEY";
         //const string apkPath = "../../../XamarinCRM.Android/bin/Release/com.xamarin.xamarincrm-Signed.apk";
         //const string apkPath = "AutoGas_29_12_2015.apk";
-        const string apkPath = "com.MahaCMO.apk";
+        const string apkPath = "com.MahaCMO-x86.apk";
         //const string appFile = "../../../XamarinCRM.iOS/bin/iPhoneSimulator/Debug/XamarinCRMiOS.app";
         const string appFile = "com.cmo.ios.ipa";
         //const string bundleId = "com.xamarin.xamarinautogas"
         //const string bundleId = "com.MahaCMO";
-		const string bundleId = "com.STTLEnterprice.cmo";
+		const string bundleId = "com.STTLEnterprise.cmo";
 
 		public static IApp StartApp(Platform platform)
 		{
@@ -25,6 +25,7 @@ namespace CMO_UITest
 				return ConfigureApp
 					.Android
 					.EnableLocalScreenshots()
+					.ApkFile(apkPath)
 					.StartApp();
 			}
             return ConfigureApp

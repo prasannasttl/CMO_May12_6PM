@@ -33,14 +33,14 @@ namespace CMO_UITest
 
 				_MenuBtn = x => x.Marked("Navigate up");
 				_CMInAction = x => x.Marked("AlblCMVISIT_Container");
-				_title = x => x.Marked("CM IN ACTION");
+				_title = x => x.Marked("lbl_CMVisit");
 				_backHeader = x => x.Marked("Navigate up");
 				_menuscroll = x => x.Marked("nav_scroll");
 
 				_International = x => x.Text("International");
 				_China = x => x.Text("China Visit");
 
-				_Domestic = x => x.Text("Domestic");
+				_Domestic = x => x.Marked("Domestic").Text("Domestic");
 				_List = x => x.Text("BEED");
 			}
 		}
@@ -54,8 +54,8 @@ namespace CMO_UITest
 				app.WaitForElement(_title, "", TimeSpan.FromSeconds(3));
 				app.Screenshot("Drawer Menu oppened");
 
-				app.ScrollDown(_menuscroll);
-				app.Screenshot("Drawer Layout Scrolled Down");
+				//app.ScrollDown(_menuscroll);
+				//app.Screenshot("Drawer Layout Scrolled Down");
 
 				app.Tap(_title);
 				app.WaitForElement(_International, "", TimeSpan.FromSeconds(3));
@@ -70,8 +70,7 @@ namespace CMO_UITest
 				app.WaitForElement(_MenuBtn, "", TimeSpan.FromSeconds(3));
 				app.Screenshot("Domestic Page oppened");
 
-				app.Tap(_MenuBtn);
-				app.Tap(_title);
+
 
 			}
 			catch (Exception ex) { Assert.Fail("Error occur on Chief Minister In Action Page " + ex.Message); }
@@ -82,9 +81,9 @@ namespace CMO_UITest
 		{
 			try
 			{
-
+				app.Repl();
 				app.Tap(_CMInAction);
-				app.WaitForElement(_Domestic, "", TimeSpan.FromSeconds(3));
+				app.WaitForElement(_Domestic, "", TimeSpan.FromSeconds(10));
 				app.Screenshot("Chief Minister in Action Selected");
 
 				app.Tap(_International);
@@ -92,7 +91,7 @@ namespace CMO_UITest
 				app.Screenshot("International page");
 
 				app.Tap(_backHeader);
-				app.WaitForElement(_Domestic, "", TimeSpan.FromSeconds(3));
+				app.WaitForElement(_Domestic, "", TimeSpan.FromSeconds(5));
 				app.Screenshot("Header Back Key pressed");
 
 				app.Tap(_Domestic);
@@ -101,8 +100,11 @@ namespace CMO_UITest
 
 				app.Tap(_backHeader);
 				app.WaitForElement(_MenuBtn, "", TimeSpan.FromSeconds(5));
+				app.Screenshot("Header Back Image Tapped");
 
 				app.Back();
+				app.WaitForElement(_MenuBtn, "", TimeSpan.FromSeconds(3));
+				app.Screenshot("Navigated Back to Home Screen");
 
 			}
 			catch (Exception ex) { Assert.Fail("Error occur on Chief Minister In Action Page " + ex.Message); }

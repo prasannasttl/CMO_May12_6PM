@@ -54,14 +54,12 @@ namespace CMO_UITest
 		{
 			try
 			{
-
+				//app.Repl();
 				//Tap CM Office Button
 				app.Tap(_CMOffice);
 				app.WaitForElement(_MenuBtn, "", TimeSpan.FromSeconds(10));
 				app.Screenshot("CM Office Button Selected");
 
-
-				app.WaitForElement(_MenuBtn, "", TimeSpan.FromSeconds(5));
 				app.Screenshot("Home Page");
 				app.ScrollDown();
 				app.WaitForElement(_PhotoBtn, "", TimeSpan.FromSeconds(3));
@@ -85,7 +83,7 @@ namespace CMO_UITest
 			//	app.Repl();
 
 			}
-			catch (Exception ex) { Assert.Fail("Error occur on Mani Application Home  Page " + ex.Message); }
+			catch (Exception ex) { Assert.Fail("Error occur on Main Application Home  Page " + ex.Message); }
 			return ErrorMessage;
 		}
 

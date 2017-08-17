@@ -8,9 +8,9 @@ namespace CMO.ServiceLayer
 {
     public class ServiceLinks
     {
-        //  public static string BaseUrl = "http://14.141.36.212/maharastracmo/api/";
+        public static string BaseUrl = "http://14.142.138.72/maharastracmo/api/";
        // public static string BaseUrl = "https://103.8.188.82/api/";
-        public static string BaseUrl = "https://cmo.maharashtra.gov.in/api/";
+        //public static string BaseUrl = "https://cmo.maharashtra.gov.in/api/";
         public static string webviewPageContentURL = BaseUrl + "getpagecontent";
         public static string webviewBlockContentURL = BaseUrl + "getblockcontent";
         #region CM'S OFFICE

@@ -21,7 +21,8 @@ namespace CMO_UITest
 		readonly Query _Header;
 		readonly Query _Biography;
 		readonly Query _VisionAndMission;
-
+		readonly Query _BioPage;
+		readonly Query _VisionPage;
 		#endregion
 
 		public MeetTheCM(IApp app, Platform platform)
@@ -36,8 +37,10 @@ namespace CMO_UITest
 				_meetTheCM = x => x.Marked("lbl_MeetCM");
 				_backHeader = x => x.Marked("Navigate up");
 				_Header = x => x.Marked("action_bar").Text("MEET THE CHIEF MINISTER");
-				_Biography = x => x.Text("Biography");
-				_VisionAndMission = x => x.Text("Vision and Mission");
+				_Biography = x => x.Marked("lbl_Biography");
+				_VisionAndMission = x => x.Marked("lbl_VissionMissionOath");
+				_BioPage = x => x.Text("Biography");
+				_VisionPage = x => x.Text("Vision and Mission");
 
 				#endregion
 			}
@@ -50,6 +53,7 @@ namespace CMO_UITest
 		{
 			try
 			{
+				//app.Repl();
 				app.Tap(_MenuBtn);
 				app.WaitForElement(_meetTheCM,"",TimeSpan.FromSeconds(5));
 				app.Screenshot("Navigation Drawer Openned");
@@ -69,8 +73,7 @@ namespace CMO_UITest
 				app.WaitForElement(_MenuBtn, "", TimeSpan.FromSeconds(3));
 				app.Screenshot("Vision and Mission selected");
 
-				app.Tap(_MenuBtn);
-				app.Tap(_meetTheCM);
+
 			}
 			catch (Exception ex)
 			{
@@ -91,8 +94,8 @@ namespace CMO_UITest
 				app.Tap(_MeetCM);
 				app.WaitForElement(_backHeader, "", TimeSpan.FromSeconds(5));
 				app.Screenshot("Meet The CM");
-
-				app.Tap(_Biography);
+				//app.Repl();
+				app.Tap(_BioPage);
 				app.WaitForElement(_backHeader, "", TimeSpan.FromSeconds(10));
 				app.Screenshot("Biographt page");
 
@@ -100,7 +103,7 @@ namespace CMO_UITest
 				app.Back();
 				app.WaitForElement(_backHeader, "", TimeSpan.FromSeconds(15));
 
-				app.Tap(_VisionAndMission);
+				app.Tap(_VisionPage);
 				app.WaitForElement(_backHeader, "", TimeSpan.FromSeconds(10));
 				app.Screenshot("Vision and Mission page");
 

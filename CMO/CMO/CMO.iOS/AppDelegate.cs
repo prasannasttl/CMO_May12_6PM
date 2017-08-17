@@ -24,15 +24,22 @@ namespace CMO.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+
+            // Code to start the Xamarin Test Cloud Agent
+            #if ENABLE_TEST_CLOUD
+			Xamarin.Calabash.Start();
+            #endif
+
+
             global::Xamarin.Forms.Forms.Init();
-			/*var cv = typeof(Xamarin.Forms.CarouselView);
+            /*var cv = typeof(Xamarin.Forms.CarouselView);
 			var assembly = Assembly.Load(cv.FullName);*/
             CachedImageRenderer.Init();
             var b = UIScreen.MainScreen.Bounds;
             int h = (int)b.Height;
             int w = (int)b.Width;
             UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(20, 27, 61);
-           // UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(244, 116, 33);
+            // UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(244, 116, 33);
             UINavigationBar.Appearance.TintColor = UIColor.White;
             UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes()
             {
@@ -40,12 +47,12 @@ namespace CMO.iOS
             });
 
             UIApplication.SharedApplication.SetStatusBarHidden(true, true);
-			var mc = new MenuContainerPageiOSRenderer();
+            var mc = new MenuContainerPageiOSRenderer();
             CarouselView.FormsPlugin.iOS.CarouselViewRenderer.Init();
-            LoadApplication(new App(w,h));
-         //   LoadApplication(new App());
+            LoadApplication(new App(w, h));
+            //   LoadApplication(new App());
             return base.FinishedLaunching(app, options);
         }
-      
+
     }
 }

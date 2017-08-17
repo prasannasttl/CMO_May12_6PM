@@ -54,7 +54,7 @@ namespace CMO_UITest
 			{
 				app.Tap(_MenuBtn);
 				app.WaitForElement(_title, "", TimeSpan.FromSeconds(3));
-				app.Repl();
+				//app.Repl();
 				app.Tap(_title);
 				app.WaitForElement(_Governor, "", TimeSpan.FromSeconds(3));
 				app.Screenshot("Team Maharashtra tapped");
@@ -104,9 +104,6 @@ namespace CMO_UITest
 				app.WaitForElement(_MenuBtn, "", TimeSpan.FromSeconds(3));
 				app.Screenshot("Government Departments page openned");
 
-				app.Tap(_MenuBtn);
-				app.Tap(_title);
-
 			}
 			catch (Exception ex) { Assert.Fail("Error occur on Team Maharashtra Page " + ex.Message); }
 			return ErrorMessage;
@@ -116,7 +113,6 @@ namespace CMO_UITest
 		{
 			try
 			{
-
 				app.Tap(_TeamMaharashtra);
 				app.WaitForElement(_Governor, "", TimeSpan.FromSeconds(5));
 				app.Screenshot("Team Maharashtra page");
@@ -159,7 +155,7 @@ namespace CMO_UITest
 
 				app.ScrollDown();
 				app.Screenshot("Team Maharashtra Page Scrolled down");
-
+				//app.Repl();
 				app.Tap(_Collectors);
 				app.WaitForElement(_backHeader, "", TimeSpan.FromSeconds(3));
 				app.Screenshot("Collectors page");

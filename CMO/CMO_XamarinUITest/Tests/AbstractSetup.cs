@@ -9,7 +9,7 @@ using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Querie
 namespace CMO_UITest
 {
 	[TestFixture(Platform.Android)]
-	[TestFixture(Platform.iOS)]
+	//[TestFixture(Platform.iOS)]
 	public abstract class AbstractSetup
 	{
 		protected IApp app;

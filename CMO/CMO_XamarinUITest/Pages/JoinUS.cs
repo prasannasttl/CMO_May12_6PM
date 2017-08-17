@@ -15,9 +15,13 @@ namespace CMO_UITest
 		readonly Query _backHeader;
 		readonly Query _title;
 		readonly Query _SahabhagSRC;
+		readonly Query _SahabhagPage;
 		readonly Query _CMFellowshipProgramme;
+		readonly Query _CMFellowshipProgrammePage;
 		readonly Query _CMReliefFund;
+		readonly Query _CMReliefFundPage;
 		readonly Query _MyGov;
+		readonly Query _MyGovPage;
 		readonly Query _JoinUs;
 
 
@@ -26,14 +30,17 @@ namespace CMO_UITest
 		{
 			if (OnAndroid)
 			{
-				_title = x => x.Marked("JOIN US");
+				_title = x => x.Marked("lbl_JoinUs");
 				_backHeader = x => x.Marked("Navigate up");
 				_JoinUs = x => x.Marked("AJoinUsImage_Container");
-				_SahabhagSRC = x => x.Text("Sahabhag - Social Responsibility Cell");
-				_CMFellowshipProgramme = x => x.Text("Chief Minister's Fellowship Programme");
-				_CMReliefFund = x => x.Text("Chief Minister's Relief Fund");
-				_MyGov = x => x.Text("MyGov");
-
+				_SahabhagSRC = x => x.Marked("lbl_SocialResponsibilityCell");
+				_SahabhagPage = x => x.Marked("Sahabhag - Social Responsibility Cell");
+				_CMFellowshipProgramme = x => x.Marked("lbl_CMsInternshipProgram");
+				_CMFellowshipProgrammePage = x => x.Marked("Chief Minister's Fellowship Programme");
+				_CMReliefFund = x => x.Marked("lbl_CMsReliefFund");
+				_CMReliefFundPage = x => x.Marked("Chief Minister's Relief Fund");
+				_MyGov = x => x.Marked("lbl_MyGov");
+				_MyGovPage = x => x.Marked("MyGov");
 			}
 		}
 
@@ -82,7 +89,7 @@ namespace CMO_UITest
 			try
 			{
 				app.Tap(_JoinUs);
-				app.WaitForElement(_SahabhagSRC,"",TimeSpan.FromSeconds(5));
+				app.WaitForElement(_backHeader,"",TimeSpan.FromSeconds(5));
 				app.Screenshot("Join Us page");
 
 				app.ScrollDown();
@@ -90,7 +97,7 @@ namespace CMO_UITest
 
 				//app.Repl();
 
-				app.Tap(_SahabhagSRC);
+				app.Tap(_SahabhagPage);
 				app.WaitForElement(_backHeader, "", TimeSpan.FromSeconds(5));
 				app.Screenshot("Sahabhag - Social Responsibility Cell page");
 
@@ -98,7 +105,7 @@ namespace CMO_UITest
 				app.WaitForElement(_backHeader, "", TimeSpan.FromSeconds(3));
 				app.Screenshot("Sahabhag - Social Responsibility Cell page header back tapped");
 
-				app.Tap(_CMFellowshipProgramme);
+				app.Tap(_CMFellowshipProgrammePage);
 				app.WaitForElement(_backHeader, "", TimeSpan.FromSeconds(5));
 				app.Screenshot("Chief Minister's Fellowship programme page");
 
@@ -107,16 +114,16 @@ namespace CMO_UITest
 				app.Screenshot("Chief Minister's Fellowship programme page header back tapped");
 
 				app.Repl();
-				/*
-				app.Tap(_CMReliefFund);
+
+				app.Tap(_CMReliefFundPage);
 				app.WaitForElement(_backHeader, "", TimeSpan.FromSeconds(5));
 				app.Screenshot("Chief Minister's Relief Fund page");
 
 				app.Tap(_backHeader);
 				app.WaitForElement(_backHeader, "", TimeSpan.FromSeconds(3));
-				app.Screenshot("Chief Minister's Relief Fund page header back tapped");*/
+				app.Screenshot("Chief Minister's Relief Fund page header back tapped");
 
-				app.Tap(_MyGov);
+				app.Tap(_MyGovPage);
 				app.WaitForElement(_backHeader, "", TimeSpan.FromSeconds(5));
 				app.Screenshot("MyGov page");
 

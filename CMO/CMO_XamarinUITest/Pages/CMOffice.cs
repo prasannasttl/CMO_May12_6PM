@@ -54,8 +54,8 @@ namespace CMO_UITest
 		public CMOffice(IApp app, Platform platform)
 						: base(app, platform)
 		{
-			if (OnAndroid)
-			{
+			//if (OnAndroid)
+			//{
 				_menuBtn = x => x.Marked("Navigate up");
 				_CMOffice = x => x.Marked("CM'S OFFICE");
 				_CMOfficeHomePage = x => x.Marked("ABannerButton_Container");
@@ -67,7 +67,7 @@ namespace CMO_UITest
 
 				//Former Maharashtra Chief Minister
 				#region
-				_FMCM = x => x.Marked("lbl_FormerCMs").Text("Former Maharashtra Chief Ministers");
+				_FMCM = x => x.Marked("lbl_FormerCMs");
 				#endregion
 
 				//Contact the CMO
@@ -77,7 +77,7 @@ namespace CMO_UITest
 				_Email = x => x.Marked("txt_Email");
 				_Mobile = x => x.Marked("txt_mobile");
 				_Subject = x => x.Marked("txt_subject"); 
-				_messageBox = x => x.Marked("txt_Message").Text(" * Message");
+				_messageBox = x => x.Marked("txt_Message");
 				_submitBtn = x => x.Marked("SUBMIT");
 				_errName = x => x.Marked("message").Text("Please enter valid Name.");
 				_errEmail = x => x.Marked("message").Text("Please enter valid Email Address.");
@@ -91,21 +91,23 @@ namespace CMO_UITest
 				_emailid = x => x.Marked("OfficeEmail");
 				#endregion
 
-			}
+			//}
 		}
 
 		public string TeamCMO()
 		{
 			try 
 			{
-
+				//app.Repl();
 				//Tap CM Office Button
 				app.Tap(_CMOfficeHomePage);
 				app.WaitForElement(_menuBtn, "", TimeSpan.FromSeconds(10));
 				app.Screenshot("CM Office Button Selected");
 
+				//app.Repl();
+
 				app.Tap(_menuBtn);
-				app.WaitForElement(_CMOffice);
+				app.WaitForElement(_CMOffice,"",TimeSpan.FromSeconds(10));
 				app.Screenshot("Menu tapped");
 
 				app.Tap(_CMOffice);
@@ -155,27 +157,56 @@ namespace CMO_UITest
 				app.WaitForElement(_submitBtn,"",TimeSpan.FromSeconds(3));
 				app.Screenshot("Contact the CMO page");
 
+				app.Tap(_submitBtn);
+				//app.WaitForElement(_okBtn, "", TimeSpan.FromSeconds(3));
+				app.Screenshot("Enter Name Popup");
+				app.Tap(_okBtn);
+				app.WaitForElement(_submitBtn, "", TimeSpan.FromSeconds(3));
+				app.Screenshot("OK button Tapped");
+
 				app.Tap(_Name);
 				app.EnterText("Test1");
-				app.Screenshot("Text Entered in Name text Box");
+				app.Screenshot("Name Entered ");
 				app.DismissKeyboard();
 				app.WaitForElement(_submitBtn, "", TimeSpan.FromSeconds(3));
+
+				app.Tap(_submitBtn);
+				//app.WaitForElement(_okBtn, "", TimeSpan.FromSeconds(3));
+				app.Screenshot("Enter Email Popup");
+				app.Tap(_okBtn);
+				app.WaitForElement(_submitBtn, "", TimeSpan.FromSeconds(3));
+				app.Screenshot("OK button Tapped");
 
 				app.Tap(_Email);
 				app.EnterText("abc@test.com");
-				app.Screenshot("Text Entered in Name text Box");
+				app.Screenshot("EmailID Entered ");
 				app.DismissKeyboard();
 				app.WaitForElement(_submitBtn, "", TimeSpan.FromSeconds(3));
+
+				app.Tap(_submitBtn);
+				//app.WaitForElement(_okBtn, "", TimeSpan.FromSeconds(3));
+				app.Screenshot("Enter Mobile Number Popup");
+				app.Tap(_okBtn);
+				app.WaitForElement(_submitBtn, "", TimeSpan.FromSeconds(3));
+				app.Screenshot("OK button Tapped");
+
 
 				app.Tap(_Mobile);
 				app.EnterText("0123456789");
-				app.Screenshot("Text Entered in Name text Box");
+				app.Screenshot("Mobile Number Entered");
 				app.DismissKeyboard();
 				app.WaitForElement(_submitBtn, "", TimeSpan.FromSeconds(3));
 
+				app.Tap(_submitBtn);
+				//app.WaitForElement(_okBtn, "", TimeSpan.FromSeconds(3));
+				app.Screenshot("Enter Subject Popup");
+				app.Tap(_okBtn);
+				app.WaitForElement(_submitBtn, "", TimeSpan.FromSeconds(3));
+				app.Screenshot("OK button Tapped");
+
 				app.Tap(_Subject);
 				app.EnterText("Testing");
-				app.Screenshot("Text Entered in Name text Box");
+				app.Screenshot("Subject Entered");
 				app.DismissKeyboard();
 				app.WaitForElement(_submitBtn, "", TimeSpan.FromSeconds(3));
 
@@ -186,7 +217,7 @@ namespace CMO_UITest
 				app.WaitForElement(_submitBtn, "", TimeSpan.FromSeconds(3));
 
 				app.Tap(_submitBtn);
-				app.WaitForElement(_okBtn, "", TimeSpan.FromSeconds(3));
+				//app.WaitForElement(_okBtn, "", TimeSpan.FromSeconds(5));
 				app.Screenshot("Message Box Popup");
 
 				app.Tap(_okBtn);
@@ -197,15 +228,18 @@ namespace CMO_UITest
 
 				app.Tap(_phNo1);
 				app.Screenshot("First Phone Number Tapped");
+				app.Tap(_okBtn);
+
 
 				app.Tap(_phNo2);
 				app.Screenshot("Second Phone Number Tapped");
+				app.Tap(_okBtn);
 
-				app.Tap(_FaxNo);
-				app.Screenshot("Fax Number Tapped");
+				//app.Tap(_FaxNo);
+				//app.Screenshot("Fax Number Tapped");
 
-				app.Tap(_emailid);
-				app.Screenshot("Email ID Tapped");
+				//app.Tap(_emailid);
+				//app.Screenshot("Email ID Tapped");
 
 
 

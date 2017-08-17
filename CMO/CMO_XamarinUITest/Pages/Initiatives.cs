@@ -55,7 +55,7 @@ namespace CMO_UITest
 				app.Tap(_menuBtn);
 				app.WaitForElement(_titleInitiatives, "", TimeSpan.FromSeconds(3));
 				app.Screenshot("Navigation Drawer Menu oppened");
-				app.Repl();
+
 				app.Tap(_titleInitiatives);
 				app.WaitForElement(_AapleSarkarPRP,"",TimeSpan.FromSeconds(3));
 				app.Screenshot("Initiatives selected");
@@ -115,7 +115,7 @@ namespace CMO_UITest
 			try
 			{
 				app.Tap(_Initiatives);
-				app.WaitForElement(_AapleSarkarPRP, "", TimeSpan.FromSeconds(5));
+				app.WaitForElement(_menuBtn, "", TimeSpan.FromSeconds(10));
 				app.Screenshot("Initiatives Page");
 
 				app.Tap(_AapleSarkarPRP);
@@ -145,6 +145,8 @@ namespace CMO_UITest
 				app.ScrollDown();
 				app.Screenshot("Initiatives page Scrolled Down");
 
+				//app.Repl();
+
 				app.Tap(_MakeinMaharashtra);
 				app.WaitForElement(_menuBtn, "", TimeSpan.FromSeconds(15));
 				app.Screenshot("Make in Maharashtra page");
@@ -152,6 +154,8 @@ namespace CMO_UITest
 				app.Tap(_menuBtn);
 				app.WaitForElement(_menuBtn, "", TimeSpan.FromSeconds(10));
 				app.Screenshot("Make in Maharastra page Header back tapped");
+
+				//app.Repl();
 
 				app.Tap(_SkillDevelopment);
 				app.WaitForElement(_menuBtn, "", TimeSpan.FromSeconds(15));

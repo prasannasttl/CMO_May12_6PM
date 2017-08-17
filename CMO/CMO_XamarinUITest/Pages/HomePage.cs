@@ -64,7 +64,6 @@ namespace CMO_UITest
 			{
 				//First Page
 				#region
-
 				_slider = x => x.Marked("pager");
 				_slide1 = x => x.Marked("Unselected0_Container");
 				_MahaCOM = x => x.Marked("AItm1_Grid");
@@ -113,15 +112,15 @@ namespace CMO_UITest
 		{
 			try
 			{
-				app.Repl();
+				//app.Repl();
 				app.Screenshot("First screen.");
 				app.WaitForElement(_slider,"",TimeSpan.FromSeconds(8));
 				app.SwipeRightToLeft(_slide2);
-				app.Screenshot("");
+				app.Screenshot("First Page Swipped Rigth to Left");
 				app.SwipeRightToLeft(_slide3);
-				app.Screenshot("");
+				app.Screenshot("Second Page Swipped Rigth to Left");
 				app.SwipeRightToLeft(_slide4);
-				app.Screenshot("");
+				app.Screenshot("Third Page Swipped Rigth to Left");
 
 
 			}

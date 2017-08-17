@@ -28,14 +28,14 @@ namespace CMO_UITest
 			if (OnAndroid)
 			{
 				_menuBtn = x => x.Marked("Navigate up");
-				_ChangeLanguage = x => x.Marked("CHANGE LANGUAGE");
+				_ChangeLanguage = x => x.Marked("lbl_Changelanguage");
 				_titleEnglish = x => x.Marked("action_bar").Text("CHANGE LANGUAGE");
 				_titleMarathi = x => x.Marked("action_bar").Text("भाषा बदला");
 				_langEng = x => x.Marked("English");
-				_engBtn = x => x.Marked("English");
+				_engBtn = x => x.Marked("btn_EnglishChangeLanguageSwitch");
 				_langMarathi = x => x.Marked("मराठी");
-				_marathiBtn = x => x.Marked("?????");
-				_home = x => x.Marked("HOME");
+				_marathiBtn = x => x.Marked("btn_MarathiChangeLanguageSwitch");
+				_home = x => x.Marked("lbl_Home");
 
 			}
 		}
@@ -51,11 +51,11 @@ namespace CMO_UITest
 				app.Screenshot("Change Language page");
 
 				app.Tap(_engBtn);
-				app.WaitForElement(_titleMarathi, "", TimeSpan.FromSeconds(3));
+				app.WaitForElement(_marathiBtn, "", TimeSpan.FromSeconds(3));
 				app.Screenshot("English Toggle button tapped");
 
 				app.Tap(_marathiBtn);
-				app.WaitForElement(_titleEnglish, "", TimeSpan.FromSeconds(3));
+				app.WaitForElement(_engBtn, "", TimeSpan.FromSeconds(3));
 				app.Screenshot("Marathi language Toggle Button tapped");
 
 				app.Tap(_menuBtn);
