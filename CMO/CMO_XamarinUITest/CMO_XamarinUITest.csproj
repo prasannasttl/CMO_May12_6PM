@@ -70,11 +70,13 @@
     <None Include="com.cmo.ios.ipa">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="com.MahaCMO.apk" />
-    <None Include="com.MahaCMO-x86.apk">
+    <None Include="com.MahaCMO-Signed.apk">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="com.MahaCMO-x86-Signed.apk">
+    <None Include="com.CMO_Android-Signed.apk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="com.CMO_Droid-Signed.apk">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
