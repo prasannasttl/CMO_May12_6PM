@@ -167,14 +167,14 @@
                    		<TapGestureRecognizer Tapped="JoinUsTapContentItem" NumberOfTapsRequired="1" />
                 	</StackLayout.GestureRecognizers>
                  </StackLayout>
-			      <StackLayout x:Name="JoinUsContentStack4" Style="{StaticResource ItemStack}" ClassId="CMReleifFund">
+			      <StackLayout AutomationId="CMReleifFund" x:Name="JoinUsContentStack4" Style="{StaticResource ItemStack}" ClassId="CMReleifFund">
               <Image  Source="ico_cm_relief_fund"  x:Name="JoinUsContentImage4" Style="{StaticResource ItemImage}" />
                      <Label x:Name="JoinUsContentLabel4" Style="{StaticResource ItemLabel}" Text="{x:Static local:AppResources.LCmReliefsFund}"  />
 					         <StackLayout.GestureRecognizers>
                    		<TapGestureRecognizer Tapped="JoinUsTapContentItem" NumberOfTapsRequired="1" />
                 	</StackLayout.GestureRecognizers>
                  </StackLayout>
-			    	<StackLayout x:Name="JoinUsContentStack5" Style="{StaticResource ItemStack}" ClassId="MyGov">
+			    	<StackLayout AutomationId="MyGov" x:Name="JoinUsContentStack5" Style="{StaticResource ItemStack}" ClassId="MyGov">
               <Image   Source="ico_mygov"  x:Name="JoinUsContentImage5" Style="{StaticResource ItemImage}" />
                      <Label x:Name="JoinUsContentLabel5" Style="{StaticResource ItemLabel}"  Text="{x:Static local:AppResources.LMyGov}" />
 					        <StackLayout.GestureRecognizers>

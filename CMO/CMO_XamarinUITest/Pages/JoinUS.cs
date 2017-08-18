@@ -38,7 +38,7 @@ namespace CMO_UITest
 				_CMFellowshipProgramme = x => x.Marked("lbl_CMsInternshipProgram");
 				_CMFellowshipProgrammePage = x => x.Marked("Chief Minister's Fellowship Programme");
 				_CMReliefFund = x => x.Marked("lbl_CMsReliefFund");
-				_CMReliefFundPage = x => x.Marked("Chief Minister's Relief Fund");
+				_CMReliefFundPage = x => x.Marked("CMReleifFund");
 				_MyGov = x => x.Marked("lbl_MyGov");
 				_MyGovPage = x => x.Marked("MyGov");
 			}
@@ -113,7 +113,7 @@ namespace CMO_UITest
 				app.WaitForElement(_backHeader, "", TimeSpan.FromSeconds(3));
 				app.Screenshot("Chief Minister's Fellowship programme page header back tapped");
 
-				app.Repl();
+				//app.Repl();
 
 				app.Tap(_CMReliefFundPage);
 				app.WaitForElement(_backHeader, "", TimeSpan.FromSeconds(5));
@@ -133,7 +133,7 @@ namespace CMO_UITest
 
 				app.Tap(_backHeader);
 				app.WaitForElement(_JoinUs, "", TimeSpan.FromSeconds(5));
-				app.Screenshot("Meet the Chief Minister page");
+				app.Screenshot("Home Page ");
 
 			}
 			catch (Exception ex) { Assert.Fail("Error occur on Join Us Page " + ex.Message); }
